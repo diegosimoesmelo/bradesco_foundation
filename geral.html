@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+
+    <!-- Estilos internos (CSS) -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            padding: 20px;
+        }
+        .portfolio-item {
+            display: inline-block;
+            width: 30%;
+            margin: 10px;
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Meu Portfólio</h1>
+</header>
+
+<!-- Conteúdo principal -->
+<div class="container">
+    <h2>Sobre Mim</h2>
+    <p>Meu nome é Diego, sou desenvolvedor web e gosto de criar projetos interessantes utilizando HTML, CSS, JavaScript e outras tecnologias. Aqui estão alguns dos meus projetos:</p>
+
+    <!-- Lista de Projetos -->
+    <h3>Projetos Recentes</h3>
+    <ul>
+        <li>Website pessoal</li>
+        <li>Blog de Tecnologia</li>
+        <li>Aplicativo de tarefas</li>
+    </ul>
+
+    <!-- Links para outros sites -->
+    <p>Veja mais detalhes dos meus projetos nos links abaixo:</p>
+    <a href="https://github.com/joao" target="_blank">Meu GitHub</a> |
+    <a href="https://www.linkedin.com/in/joao" target="_blank">Meu LinkedIn</a>
+
+    <!-- Seção de Portfólio com Imagens -->
+    <h3>Meus Projetos</h3>
+    <div class="portfolio-item">
+        <h4>Projeto 1</h4>
+        <img src="imagem1.jpg" alt="Projeto 1" style="width:100%">
+        <p>Descrição do projeto 1.</p>
+    </div>
+    <div class="portfolio-item">
+        <h4>Projeto 2</h4>
+        <img src="imagem2.jpg" alt="Projeto 2" style="width:100%">
+        <p>Descrição do projeto 2.</p>
+    </div>
+    <div class="portfolio-item">
+        <h4>Projeto 3</h4>
+        <img src="imagem3.jpg" alt="Projeto 3" style="width:100%">
+        <p>Descrição do projeto 3.</p>
+    </div>
+
+    <!-- Tabela de Habilidades -->
+    <h3>Minhas Habilidades</h3>
+    <table>
+        <tr>
+            <th>Habilidade</th>
+            <th>Nível</th>
+        </tr>
+        <tr>
+            <td>HTML</td>
+            <td>Avançado</td>
+        </tr>
+        <tr>
+            <td>CSS</td>
+            <td>Avançado</td>
+        </tr>
+        <tr>
+            <td>JavaScript</td>
+            <td>Intermediário</td>
+        </tr>
+    </table>
+
+    <!-- Formulário de Contato -->
+    <h3>Entre em Contato</h3>
+    <form action="mailto:joao@email.com" method="post">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">E-mail:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" cols="50" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+
+</div>
+
+<!-- Rodapé -->
+<footer>
+    <p>&copy; 2025 João. Todos os direitos reservados.</p>
+</footer>
+
+</body>
+</html>
