@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br"> <!-- Define que o idioma da página é português do Brasil -->
+<head>
+  <meta charset="UTF-8"> <!-- Define o conjunto de caracteres -->
+  <title>Menu Vertical Retrátil</title> <!-- Título da página -->
+
+  <!-- Início do CSS -->
+  <style>
+    body {
+      margin: 0; /* Remove a margem padrão do navegador */
+      font-family: Arial, sans-serif; /* Define a fonte do texto */
+    }
+
+    /* Estilização do menu lateral */
+    nav {
+      width: 200px; /* Largura do menu quando aberto */
+      background-color: #333; /* Cor de fundo */
+      padding-top: 20px; /* Espaçamento no topo */
+      height: 100vh; /* Altura do menu: 100% da altura da tela */
+      position: fixed; /* Fixa o menu na lateral esquerda */
+      top: 0; /* Começa no topo */
+      left: 0; /* Alinhado à esquerda */
+      transition: width 0.3s; /* Animação ao abrir/fechar */
+      overflow: hidden; /* Esconde conteúdo que ultrapassar a largura */
+    }
+
+    /* Estilo quando o menu está retraído */
+    nav.retraido {
+      width: 60px; /* Largura reduzida */
+    }
+
+    /* Estilo dos links do menu */
+    nav a {
+      display: flex; /* Coloca o ícone e texto na mesma linha */
+      align-items: center; /* Alinha verticalmente */
+      color: white; /* Cor do texto */
+      padding: 14px 20px; /* Espaçamento interno */
+      text-decoration: none; /* Remove sublinhado */
+      border-bottom: 1px solid #444; /* Linha separando os links */
+      white-space: nowrap; /* Impede quebra de linha */
+    }
+
+    /* Espaçamento entre ícone e texto */
+    nav a span {
+      margin-left: 10px;
+    }
+
+    /* Quando o menu está retraído, esconde o texto */
+    nav.retraido a span {
+      display: none;
+    }
+
+    /* Estilo do botão de abrir/fechar */
+    .toggle-btn {
+      background-color: #333; /* Cor de fundo */
+      color: white; /* Cor do texto */
+      border: none; /* Remove borda */
+      padding: 10px; /* Espaçamento interno */
+      cursor: pointer; /* Muda o cursor ao passar o mouse */
+      width: 100%; /* Largura total do menu */
+      text-align: left; /* Alinha o texto à esquerda */
+    }
+
+    /* Estilo do conteúdo principal */
+    main {
+      margin-left: 220px; /* Espaço à esquerda para o menu */
+      padding: 20px; /* Espaçamento interno */
+      transition: margin-left 0.3s; /* Animação quando menu abre/fecha */
+    }
+
+    /* Quando o menu está retraído, ajusta o espaço do conteúdo */
+    nav.retraido ~ main {
+      margin-left: 80px;
+    }
+  </style>
+  <!-- Fim do CSS -->
+</head>
+
+<body>
+
+  <!-- Menu lateral -->
+  <nav id="menu"> <!-- ID para poder manipular com JavaScript -->
+    <!-- Botão para abrir/fechar o menu -->
+    <button class="toggle-btn" onclick="toggleMenu()">☰ Menu</button>
+
+    <!-- Links do menu -->
+    <a href="#"><strong>🏠</strong><span>Início</span></a>
+    <a href="#"><strong>ℹ️</strong><span>Sobre</span></a>
+    <a href="#"><strong>📄</strong><span>Serviços</span></a>
+    <a href="#"><strong>📞</strong><span>Contato</span></a>
+  </nav>
+
+  <!-- Conteúdo principal da página -->
+  <main>
+    <h1>Menu Vertical Retrátil</h1>
+    <p>Clique no botão ☰ Menu para abrir ou fechar o menu lateral.</p>
+  </main>
+
+  <!-- Início do JavaScript -->
+  <script>
+    // Função que alterna a classe "retraido" no menu
+    function toggleMenu() {
+      const menu = document.getElementById('menu'); // Busca o menu pelo ID
+      menu.classList.toggle('retraido'); // Adiciona ou remove a classe "retraido"
+    }
+  </script>
+  <!-- Fim do JavaScript -->
+
+</body>
+</html>
