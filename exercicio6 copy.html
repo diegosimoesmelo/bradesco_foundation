@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabela de Alunos</title>
+    <style>
+        body {
+            font-family: Tahoma, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            color: #c0392b;
+        }
+
+        table {
+            border-collapse: collapse; /* remove espaços entre as bordas */
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #eee;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9; /* zebra striping */
+        }
+    </style>
+</head>
+<body>
+    <h1>Lista de Alunos</h1>
+    <table>
+        <tr>
+            <th>Nome</th>
+            <th>Idade</th>
+            <th>Curso</th>
+        </tr>
+        <tr>
+            <td>João Silva</td>
+            <td>20</td>
+            <td>Engenharia</td>
+        </tr>
+        <tr>
+            <td>Maria Oliveira</td>
+            <td>22</td>
+            <td>Design Gráfico</td>
+        </tr>
+        <tr>
+            <td>Pedro Santos</td>
+            <td>19</td>
+            <td>Ciência da Computação</td>
+        </tr>
+    </table>
+</body>
+</html>
+<!-- border-collapse: collapse;: Remove espaços entre as bordas das células (<td> e <th>).
+
+    tr:nth-child(even) { background-color: #f9f9f9; }: Aplica um fundo diferente para as linhas pares, criando o efeito “zebrado”. -->
