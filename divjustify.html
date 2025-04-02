@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo Flex com classes individuais</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-between;
+      height: 200px;
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .box {
+      width: 30%;
+      text-align: center;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #888;
+    }
+
+    /* classes para cores distintas */
+    .azul {
+      background: #bfe2ff;
+    }
+    .laranja {
+      background: #ffd9b3;
+    }
+    .verde {
+      background: #d2ffb3;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- atribui duas classes: box (estilo geral) + cor específica -->
+    <div class="box azul">Div 1</div>
+    <div class="box laranja">Div 2</div>
+    <div class="box verde">Div 3</div>
+  </div>
+
+</body>
+</html>

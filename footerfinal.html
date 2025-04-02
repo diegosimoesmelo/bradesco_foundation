@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Sticky Footer com Flexbox</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Container principal que envolve todo o conteúdo */
+    .container {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* O contêiner vai ocupar pelo menos 100% da altura da tela */
+    }
+
+    main {
+      flex: 1; /* Faz o conteúdo crescer para empurrar o footer para baixo */
+      background: #f2f2f2;
+      padding: 20px;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 15px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <main>
+      <h1>Título do Site</h1>
+      <p>
+        Se o conteúdo da página for menor que a altura da tela,
+        o footer vai aparecer fixado no final da janela. Se for maior,
+        ele aparecerá após todo o conteúdo.
+      </p>
+    </main>
+
+    <footer>
+      &copy; 2025 - Sticky Footer Flexbox
+    </footer>
+  </div>
+
+</body>
+</html>

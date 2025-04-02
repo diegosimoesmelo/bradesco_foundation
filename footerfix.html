@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Footer Fixo</title>
+  <style>
+    body {
+      margin: 0; /* Remove margens padrão para evitar barras de rolagem indesejadas */
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .conteudo {
+      height: 2000px; /* Exemplo de conteúdo grande para testar rolagem */
+      background-color: #f2f2f2;
+    }
+    footer {
+      position: fixed;
+      bottom: 0;     /* fixa na parte de baixo */
+      left: 0;       /* inicia no canto esquerdo */
+      width: 100%;   /* ocupa toda a largura da tela */
+      background: #333;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="conteudo">
+    <h1>Exemplo de Página</h1>
+    <p>Role a página para ver como o footer permanece fixo na parte de baixo.</p>
+  </div>
+
+  <footer>
+    &copy; 2025 - Meu Footer Fixo
+  </footer>
+
+</body>
+</html>

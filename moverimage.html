@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Movendo Imagem</title>
+  <style>
+    /* Define uma div como "contêiner" */
+    .container {
+      position: relative; /* qualquer coisa dentro dela usará o canto superior esquerdo da div, não do body todo */
+      width: 600px;
+      height: 400px;
+      background-color: #f0f0f0; 
+      margin: 50px auto; /* centraliza horizontalmente na tela */
+      border: 1px solid #ccc;
+    }
+
+    /* A imagem com position absolute */
+    .movel {
+      position: absolute;
+      top: 50px; /* distância de 50px do topo da div */
+      left: 100px; /* distância de 100px do lado esquerdo da div */
+      width: 20rem; /* define largura da imagem */
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="imagem.jpg" alt="Exemplo" class="movel">
+  </div>
+
+</body>
+</html>
