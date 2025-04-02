@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo z-index</title>
+  <style>
+    .container {
+      position: relative;
+      width: 300px;
+      height: 200px;
+      border: 1px solid #333;
+    }
+    .caixa1 {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 80px;
+      height: 80px;
+      background-color: #90caf9;
+      z-index: 1; /* Fica por cima da caixa2 */
+    }
+    .caixa2 {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      width: 80px;
+      height: 80px;
+      background-color: #f48fb1;
+      z-index: 2; /* Fica acima da caixa1 (maior valor = “mais acima”) */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: z-index</h1>
+  <div class="container">
+    <div class="caixa1">Z-Index: 1</div>
+    <div class="caixa2">Z-Index: 2</div>
+  </div>
+
+</body>
+</html>

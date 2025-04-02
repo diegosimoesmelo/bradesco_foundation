@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo top/right/bottom/left</title>
+  <style>
+    .container {
+      position: relative;
+      width: 400px;
+      height: 200px;
+      border: 1px solid #333;
+      background-color: #fafafa;
+    }
+    .caixa1 {
+      position: absolute;
+      top: 10px;   /* 10px do topo do container */
+      left: 10px;  /* 10px do lado esquerdo do container */
+      background-color: #c8e6c9;
+      padding: 5px;
+    }
+    .caixa2 {
+      position: absolute;
+      bottom: 10px; /* 10px do rodapé do container */
+      right: 20px;  /* 20px do lado direito do container */
+      background-color: #ffcdd2;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: top, right, bottom, left</h1>
+  <div class="container">
+    <div class="caixa1">Caixa 1 (top, left)</div>
+    <div class="caixa2">Caixa 2 (bottom, right)</div>
+  </div>
+
+</body>
+</html>

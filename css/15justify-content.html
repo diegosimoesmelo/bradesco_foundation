@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo justify-content</title>
+  <style>
+    .container {
+      display: flex;
+      border: 1px solid #333;
+      min-height: 60px;
+      margin-bottom: 20px;
+      background-color: #f1f1f1;
+    }
+    .box {
+      background-color: #b3e5fc;
+      margin: 5px;
+      padding: 10px;
+      flex: 0 0 auto;
+      text-align: center;
+      width: 60px;
+    }
+
+    .start   { justify-content: flex-start; }
+    .end     { justify-content: flex-end; }
+    .center  { justify-content: center; }
+    .between { justify-content: space-between; }
+    .around  { justify-content: space-around; }
+    .evenly  { justify-content: space-evenly; }
+
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: justify-content</h1>
+
+  <div class="container start">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+  <p>flex-start</p>
+
+  <div class="container end">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+  <p>flex-end</p>
+
+  <div class="container center">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+  <p>center</p>
+
+  <div class="container between">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+  <p>space-between</p>
+
+  <div class="container around">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+  <p>space-around</p>
+
+  <div class="container evenly">
+    <div class="box">1</div><div class="box">2</div><div class="box">3</div>
+  </div>
+  <p>space-evenly</p>
+
+</body>
+</html>

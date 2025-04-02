@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo max-width e min-width</title>
+  <style>
+    .bloco {
+      background-color: #fff9c4;
+      padding: 10px;
+      margin: 10px auto;
+      width: 80%;
+      max-width: 500px; /* Não ultrapassa 500px, mesmo que 80% seja maior */
+      min-width: 300px; /* Não encolhe menos que 300px */
+      border: 2px solid #333;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: max-width e min-width</h1>
+  <div class="bloco">
+    Ajuste o tamanho da janela para ver como o bloco respeita min-width e max-width.
+  </div>
+
+</body>
+</html>

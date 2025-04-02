@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo justify-items e align-items</title>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(2, 80px);
+      gap: 10px;
+      border: 1px solid #333;
+      margin-bottom: 20px;
+      background-color: #fafafa;
+    }
+    .box {
+      background-color: #ffe082;
+      border: 1px solid #666;
+    }
+
+    .ex1 {
+      justify-items: start;
+      align-items: start;
+    }
+    .ex2 {
+      justify-items: center;
+      align-items: center;
+    }
+    .ex3 {
+      justify-items: end;
+      align-items: end;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: justify-items e align-items (Grid)</h1>
+
+  <div class="container ex1">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+  </div>
+  <p>justify-items: start, align-items: start</p>
+
+  <div class="container ex2">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+  </div>
+  <p>justify-items: center, align-items: center</p>
+
+  <div class="container ex3">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+  </div>
+  <p>justify-items: end, align-items: end</p>
+
+</body>
+</html>

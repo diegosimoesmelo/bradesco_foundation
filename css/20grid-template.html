@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo grid-template</title>
+  <style>
+    .container {
+      display: grid;
+      /* Uma coluna de 1fr e outra de 2fr (ex: a segunda é o dobro da primeira) */
+      grid-template-columns: 1fr 2fr;
+
+      /* Duas linhas: primeira com altura fixa de 100px, segunda “automática” */
+      grid-template-rows: 100px auto;
+      
+      gap: 10px;
+      border: 1px solid #333;
+      height: 300px; /* para visualização */
+    }
+    .box {
+      background-color: #ffccbc;
+      border: 1px dashed #666;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: grid-template-columns e grid-template-rows</h1>
+  <div class="container">
+    <div class="box">Caixa 1</div>
+    <div class="box">Caixa 2</div>
+    <div class="box">Caixa 3</div>
+    <div class="box">Caixa 4</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo position</title>
+  <style>
+    .statico {
+      position: static; /* Padrão, segue o fluxo normal da página */
+      background-color: #e1bee7;
+      margin-bottom: 10px;
+    }
+    .relativo {
+      position: relative; /* Elemento pode ser "deslocado" mas mantém espaço original */
+      top: 10px;
+      left: 20px;
+      background-color: #ffccbc;
+      margin-bottom: 10px;
+    }
+    .absoluto-container {
+      position: relative; /* Para servir de referência ao elemento absoluto */
+      width: 300px;
+      height: 150px;
+      background-color: #bbdefb;
+      margin-bottom: 10px;
+    }
+    .absoluto {
+      position: absolute; /* Posicionado em relação ao container */
+      top: 20px;
+      left: 50px;
+      background-color: #fff176;
+      padding: 5px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: position</h1>
+
+  <div class="statico">position: static (padrão)</div>
+
+  <div class="relativo">position: relative (deslocado 10px para baixo e 20px para a esquerda)</div>
+
+  <div class="absoluto-container">
+    Container (position: relative)
+    <div class="absoluto">Elemento Absoluto</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo display: grid</title>
+  <style>
+    .container {
+      display: grid; /* Ativa Grid Layout */
+      grid-template-columns: 100px 100px 100px; /* 3 colunas de 100px cada */
+      grid-template-rows: 100px 100px;          /* 2 linhas de 100px cada */
+      gap: 10px;                                /* Espaço entre células */
+      border: 1px solid #333;
+      background-color: #fafafa;
+      padding: 10px;
+    }
+    .box {
+      background-color: #b2ebf2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid #666;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: display: grid</h1>
+  <div class="container">
+    <div class="box">A</div>
+    <div class="box">B</div>
+    <div class="box">C</div>
+    <div class="box">D</div>
+    <div class="box">E</div>
+    <div class="box">F</div>
+  </div>
+
+</body>
+</html>

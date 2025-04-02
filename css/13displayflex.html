@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo display: flex</title>
+  <style>
+    .container {
+      display: flex; /* Ativa o Flexbox */
+      border: 1px solid #333;
+      padding: 10px;
+      background-color: #fafafa;
+    }
+    .item {
+      background-color: #b3e5fc;
+      margin: 5px;
+      padding: 20px;
+      flex: 1; /* Cada item cresce igualmente, se possível */
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: display: flex</h1>
+  <div class="container">
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+  </div>
+
+</body>
+</html>

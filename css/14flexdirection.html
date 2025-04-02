@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo flex-direction</title>
+  <style>
+    .linha {
+      display: flex;
+      flex-direction: row; /* Padrão: itens na horizontal */
+      margin-bottom: 20px;
+      border: 1px solid #333;
+    }
+    .coluna {
+      display: flex;
+      flex-direction: column; /* Itens na vertical */
+      border: 1px solid #333;
+    }
+    .item {
+      background-color: #fff9c4;
+      margin: 5px;
+      padding: 10px;
+      flex: 1;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: flex-direction</h1>
+
+  <div class="linha">
+    <div class="item">A</div>
+    <div class="item">B</div>
+    <div class="item">C</div>
+  </div>
+
+  <div class="coluna">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+
+</body>
+</html>

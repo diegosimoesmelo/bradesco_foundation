@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplo align-items</title>
+  <style>
+    .container {
+      display: flex;
+      height: 150px;
+      border: 1px solid #333;
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+    }
+    .box {
+      background-color: #ffe082;
+      margin: 5px;
+      width: 60px;
+      text-align: center;
+    }
+
+    .start   { align-items: flex-start; }
+    .end     { align-items: flex-end; }
+    .center  { align-items: center; }
+    .stretch { align-items: stretch; }
+  </style>
+</head>
+<body>
+
+  <h1>Exemplo: align-items</h1>
+
+  <div class="container start">
+    <div class="box">A</div>
+    <div class="box">B<br>texto<br>extra</div>
+    <div class="box">C<br>mais<br>linhas</div>
+  </div>
+  <p>flex-start (alinhar ao topo)</p>
+
+  <div class="container end">
+    <div class="box">A</div>
+    <div class="box">B<br>texto<br>extra</div>
+    <div class="box">C<br>mais<br>linhas</div>
+  </div>
+  <p>flex-end (alinhar ao fundo)</p>
+
+  <div class="container center">
+    <div class="box">A</div>
+    <div class="box">B<br>texto<br>extra</div>
+    <div class="box">C<br>mais<br>linhas</div>
+  </div>
+  <p>center (centralizar verticalmente)</p>
+
+  <div class="container stretch">
+    <div class="box">A</div>
+    <div class="box">B<br>texto<br>extra</div>
+    <div class="box">C<br>mais<br>linhas</div>
+  </div>
+  <p>stretch (os itens esticam para preencher a altura)</p>
+
+</body>
+</html>
