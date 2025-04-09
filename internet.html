@@ -7,38 +7,59 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Menu de navegação -->
+    <!-- Cabeçalho com menu de navegação -->
     <header>
         <nav>
             <ul>
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#contato">Contato</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
                 <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Seção Início -->
-    <section id="inicio">
+    <section id="inicio" class="hero-section">
         <h1>Bem-vindo ao Provedor de Internet!</h1>
-        <p>Oferecemos a melhor conexão para você e sua família. Explore nossos planos de internet.</p>
+        <p>Velocidade, estabilidade e suporte de qualidade para você e sua família.</p>
+        <a href="#servicos" class="cta-button">Conheça nossos planos</a>
     </section>
 
-    <!-- Seção de Serviços -->
+    <!-- Seção Sobre Nós -->
+    <section id="sobre" class="sobre-section">
+        <h2>Sobre Nós</h2>
+        <p>
+            Somos uma empresa dedicada a oferecer conexão de internet de alta velocidade, 
+            com um foco especial na satisfação do cliente. 
+            Nossa missão é garantir que você fique sempre conectado, 
+            seja para trabalho, estudo ou lazer.
+        </p>
+        <p>
+            Com uma equipe especializada, oferecemos suporte técnico ágil e eficiente, 
+            visando resolver qualquer problema de forma rápida. 
+            Conte conosco para navegar sem preocupações!
+        </p>
+    </section>
+
+    <!-- Seção Serviços -->
     <section id="servicos">
         <h2>Nossos Serviços</h2>
         <div class="cards">
             <div class="card">
                 <h3>Plano Básico</h3>
-                <p>Internet de 50Mbps para navegar, ver vídeos e redes sociais.</p>
+                <p>50Mbps para quem precisa de navegação simples e redes sociais.</p>
+                <p class="preco">R$ 59,90 / mês</p>
             </div>
             <div class="card">
                 <h3>Plano Intermediário</h3>
-                <p>Internet de 100Mbps para jogar, trabalhar e assistir conteúdos em HD.</p>
+                <p>100Mbps para jogar online, trabalhar e assistir conteúdos em HD.</p>
+                <p class="preco">R$ 79,90 / mês</p>
             </div>
             <div class="card">
                 <h3>Plano Avançado</h3>
-                <p>Internet de 200Mbps para streaming em 4K e jogos online sem lag.</p>
+                <p>200Mbps para streaming em 4K, jogos online e alta performance.</p>
+                <p class="preco">R$ 99,90 / mês</p>
             </div>
         </div>
     </section>
@@ -46,11 +67,32 @@
     <!-- Seção de Contato -->
     <section id="contato">
         <h2>Entre em Contato</h2>
-        <p>Fale conosco através do nosso telefone ou e-mail.</p>
+        <p>Preencha o formulário abaixo para falar conosco ou envie um e-mail diretamente.</p>
+        <form class="contato-form">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" placeholder="Seu nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" placeholder="Seu e-mail" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="5" placeholder="Sua mensagem" required></textarea>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <p class="info-contato">
+            Ou se preferir, ligue para (81) 1234-5678 ou envie um e-mail para contato@provedor.com.br
+        </p>
     </section>
-    
+
+    <!-- Rodapé -->
     <footer>
-        <p>&copy; 2025 Provedor de Internet - Todos os direitos reservados.</p>
+        <p>&copy; 2025 Provedor de Internet. Todos os direitos reservados.</p>
+        <p>Siga-nos nas redes sociais: 
+            <a href="#">Facebook</a> | 
+            <a href="#">Instagram</a> | 
+            <a href="#">LinkedIn</a>
+        </p>
     </footer>
 </body>
 </html>
