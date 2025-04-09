@@ -1,0 +1,111 @@
+/* Reset de margens e padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Definir fonte padrão e cores de fundo */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Estilos para o header e o menu de navegação */
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+}
+
+header nav ul {
+    list-style: none;
+    text-align: center;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+header nav ul li a:hover {
+    color: #f4a261;
+}
+
+/* Estilo para a seção de Início */
+#inicio {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#inicio h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+/* Estilos para a seção de Serviços e os cards */
+#servicos {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #ffffff;
+}
+
+#servicos h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background-color: #f4a261;
+    padding: 20px;
+    border-radius: 8px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+    font-size: 24px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #fff;
+    font-size: 16px;
+}
+
+/* Estilos para a seção de Contato */
+#contato {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #333;
+    color: white;
+}
+
+#contato h2 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
