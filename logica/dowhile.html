@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let senhaCorreta = "1234";
+let tentativas = 0;
+let senha;
+
+do {
+  // Solicita ao usuário digitar a senha
+  senha = prompt("Digite a senha:");
+
+  tentativas++;  // Incrementa o número de tentativas
+
+  // Verifica se a senha está correta
+  if (senha === senhaCorreta) {
+    console.log("Senha correta! Acesso permitido.");
+    break;  // Interrompe o loop se a senha estiver correta
+  } else if (tentativas < 3) {
+    console.log("Senha incorreta. Tente novamente.");
+  }
+
+} while (tentativas < 3);  // A condição do loop é baseada no número de tentativas
+
+if (senha !== senhaCorreta) {
+  console.log("Você excedeu o número de tentativas. Acesso bloqueado.");
+}
+
+    </script>
+</body>
+</html>

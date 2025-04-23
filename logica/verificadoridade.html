@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verificador de Idade</title>
+</head>
+<body>
+    <!-- parseInt para qualquer valor que chegar ser transformado em int, prompt para abrir a caixa de mensagem para digitar -->
+  <script>
+    let idade = parseInt(prompt("Digite sua idade:"));
+
+    if (idade < 18) {
+      alert("Você é menor de idade.");
+    } else if (idade <= 60) {
+      alert("Você é adulto.");
+    } else {
+      alert("Você é idoso.");
+    }
+  </script>
+</body>
+</html>

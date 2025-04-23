@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    let produtos = [
+        { nome: "Camiseta", preco: 45 },
+        { nome: "Tênis", preco: 150 },
+        { nome: "Calça", preco: 80 },
+        { nome: "Boné", preco: 20 }
+      ];
+      
+      for (let i = 0; i < produtos.length; i++) {
+        let desconto = 0;
+        if (produtos[i].preco < 50) {
+          desconto = 0.05; // 5%
+        } else if (produtos[i].preco >= 50 && produtos[i].preco <= 100) {
+          desconto = 0.10; // 10%
+        } else {
+          desconto = 0.15; // 15%
+        }
+      
+        let precoFinal = produtos[i].preco - (produtos[i].preco * desconto);
+        console.log(`${produtos[i].nome}: R$${produtos[i].preco} -> R$${precoFinal.toFixed(2)} (Desconto de ${desconto * 100}%)`);
+      }
+      </script>
+
+</body>
+</html>

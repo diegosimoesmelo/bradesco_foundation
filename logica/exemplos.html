@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios Condicionais</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      text-align: center;
+      background-color: #f0f4f8;
+    }
+    button {
+      margin: 10px;
+      padding: 15px 30px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background-color: #4caf50;
+      color: white;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Exercícios de Condicionais em JavaScript</h1>
+
+  <button onclick="verificadorIdade()">Verificador de Idade</button>
+  <button onclick="parOuImpar()">Par ou Ímpar</button>
+  <button onclick="notaFinal()">Nota Final</button>
+
+  <script>
+    function verificadorIdade() {
+      let idade = parseInt(prompt("Digite sua idade:"));
+      if (isNaN(idade)) {
+        alert("Digite um número válido!");
+        return;
+      }
+
+      if (idade < 18) {
+        alert("Você é menor de idade.");
+      } else if (idade <= 60) {
+        alert("Você é adulto.");
+      } else {
+        alert("Você é idoso.");
+      }
+    }
+
+    function parOuImpar() {
+      let numero = parseInt(prompt("Digite um número:"));
+      if (isNaN(numero)) {
+        alert("Digite um número válido!");
+        return;
+      }
+
+      if (numero % 2 === 0) {
+        alert("O número é par.");
+      } else {
+        alert("O número é ímpar.");
+      }
+    }
+
+    function notaFinal() {
+      let nota = parseFloat(prompt("Digite a nota do aluno (0 a 10):"));
+      if (isNaN(nota) || nota < 0 || nota > 10) {
+        alert("Digite uma nota válida entre 0 e 10!");
+        return;
+      }
+
+      if (nota < 5) {
+        alert("Reprovado");
+      } else if (nota <= 7) {
+        alert("Recuperação");
+      } else {
+        alert("Aprovado");
+      }
+    }
+  </script>
+</body>
+</html>
