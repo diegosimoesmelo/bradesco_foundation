@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios com Funções - JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 20px;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 800px;
+      margin: auto;
+    }
+    h1 {
+      text-align: center;
+    }
+    button {
+      display: block;
+      width: 100%;
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    pre {
+      background: #ecf0f1;
+      padding: 15px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>🧪 Exercícios de Funções</h1>
+  <button onclick="ex1()">1. Saudação personalizada</button>
+  <button onclick="ex2()">2. Dobro de um número</button>
+  <button onclick="ex3()">3. Aplicar desconto</button>
+  <button onclick="ex4()">4. Calcular IMC</button>
+  <button onclick="ex5()">5. Verificar maioridade</button>
+  <button onclick="ex6()">6. Formatador de nome</button>
+  <button onclick="ex7()">7. Calcular salário com bônus</button>
+  <button onclick="ex8()">8. Mostrar produtos</button>
+  <button onclick="ex9()">9. Sistema com entrada via prompt</button>
+  <pre id="saida">Clique em um botão para ver o resultado aqui.</pre>
+</div>
+
+<script>
+  function ex1() {
+    function saudacao(nome) {
+      return "Olá, " + nome + "!";
+    }
+    document.getElementById('saida').textContent = saudacao("João");
+  }
+
+  function ex2() {
+    function dobrar(numero) {
+      return numero * 2;
+    }
+    document.getElementById('saida').textContent = "Dobro de 4: " + dobrar(4);
+  }
+
+  function ex3() {
+    function aplicarDesconto(preco, porcentagem) {
+      return preco - (preco * (porcentagem / 100));
+    }
+    document.getElementById('saida').textContent = "Desconto: R$ " + aplicarDesconto(100, 10);
+  }
+
+  function ex4() {
+    function calcularIMC(peso, altura) {
+      return (peso / (altura * altura)).toFixed(2);
+    }
+    document.getElementById('saida').textContent = "IMC: " + calcularIMC(70, 1.75);
+  }
+
+  function ex5() {
+    function maiorDeIdade(idade) {
+      return idade >= 18;
+    }
+    document.getElementById('saida').textContent = "Idade 17 é maior? " + maiorDeIdade(17);
+  }
+
+  function ex6() {
+    function formatarNome(nome, sobrenome) {
+      const nomeFormatado = nome.charAt(0).toUpperCase() + nome.slice(1);
+      const sobrenomeFormatado = sobrenome.charAt(0).toUpperCase() + sobrenome.slice(1);
+      return nomeFormatado + " " + sobrenomeFormatado;
+    }
+    document.getElementById('saida').textContent = formatarNome("ana", "silva");
+  }
+
+  function ex7() {
+    function calcularSalario(base, bonusPercentual) {
+      return base + (base * (bonusPercentual / 100));
+    }
+    function formatarSalario(valor) {
+      return "R$ " + valor.toFixed(2);
+    }
+    const salario = calcularSalario(2000, 10);
+    document.getElementById('saida').textContent = "Salário com bônus: " + formatarSalario(salario);
+  }
+
+  function ex8() {
+    function mostrarProdutos(produtos) {
+      return produtos.join("\n");
+    }
+    document.getElementById('saida').textContent = mostrarProdutos(["Mouse", "Teclado", "Monitor"]);
+  }
+
+  function ex9() {
+    function solicitarDados() {
+      const nome = prompt("Digite seu nome:");
+      const idade = parseInt(prompt("Digite sua idade:"));
+      const salario = parseFloat(prompt("Digite seu salário:"));
+      return { nome, idade, salario };
+    }
+
+    function verificarIdade(idade) {
+      return idade >= 18 ? "maior de idade" : "menor de idade";
+    }
+
+    function mostrarResumo(dados) {
+      const status = verificarIdade(dados.idade);
+      const salarioReajustado = dados.salario * 1.10;
+      return `Nome: ${dados.nome}\nIdade: ${dados.idade} (${status})\nSalário com reajuste: R$ ${salarioReajustado.toFixed(2)}`;
+    }
+
+    const usuario = solicitarDados();
+    document.getElementById('saida').textContent = mostrarResumo(usuario);
+  }
+</script>
+</body>
+</html>

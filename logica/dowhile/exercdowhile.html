@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+// nome com caractere
+let nome;
+do {
+  nome = prompt("Digite seu nome:");
+} while (!nome);
+
+alert("Nome cadastrado: " + nome);
+
+
+// repetição de senha
+let senha, confirmacao;
+do {
+  senha = prompt("Crie uma senha:");
+  confirmacao = prompt("Confirme a senha:");
+  if (senha !== confirmacao) {
+    alert("As senhas não coincidem. Tente novamente.");
+  }
+} while (senha !== confirmacao);
+
+alert("Senha cadastrada com sucesso!");
+
+    </script>
+</body>
+</html>
