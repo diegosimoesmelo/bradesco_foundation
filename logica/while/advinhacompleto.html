@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo: Adivinhe o Número</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .game-container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      text-align: center;
+      width: 320px;
+    }
+    input[type="number"] {
+      padding: 10px;
+      font-size: 1em;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 1em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    .message {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    .tentativas {
+      margin-top: 10px;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h2>🎯 Adivinhe o Número</h2>
+    <p>Digite um número entre 1 e 100</p>
+    <input type="number" id="guessInput" min="1" max="100">
+    <button onclick="checkGuess()">Tentar</button>
+    <button onclick="reiniciarJogo()" id="restartBtn" style="display:none">🔁 Jogar Novamente</button>
+    <div class="tentativas" id="tentativasInfo"></div>
+    <div class="message" id="message"></div>
+  </div>
+
+  <script>
+    let numeroSecreto;
+    let tentativas;
+    let limiteTentativas = 10;
+
+    function iniciarJogo() {
+      numeroSecreto = Math.floor(Math.random() * 100) + 1;
+      tentativas = 0;
+      document.getElementById("guessInput").disabled = false;
+      document.getElementById("guessInput").value = "";
+      document.getElementById("message").textContent = "";
+      document.getElementById("tentativasInfo").textContent = `Tentativas restantes: ${limiteTentativas}`;
+      document.getElementById("restartBtn").style.display = "none";
+      document.getElementById("guessInput").focus();
+    }
+
+    function checkGuess() {
+      const input = document.getElementById("guessInput");
+      const mensagem = document.getElementById("message");
+      const info = document.getElementById("tentativasInfo");
+      const chute = parseInt(input.value);
+
+      if (isNaN(chute) || chute < 1 || chute > 100) {
+        mensagem.textContent = "Por favor, digite um número entre 1 e 100.";
+        return;
+      }
+
+      tentativas++;
+      let tentativasRestantes = limiteTentativas - tentativas;
+
+      if (chute < numeroSecreto) {
+        mensagem.textContent = "🔼 Muito baixo! Tente um número maior.";
+      } else if (chute > numeroSecreto) {
+        mensagem.textContent = "🔽 Muito alto! Tente um número menor.";
+      } else {
+        mensagem.textContent = `🎉 Parabéns! Você acertou o número ${numeroSecreto} com ${tentativas} tentativa(s)!`;
+        encerrarJogo();
+        return;
+      }
+
+      if (tentativas >= limiteTentativas) {
+        mensagem.textContent = `😢 Fim de jogo! O número era ${numeroSecreto}.`;
+        encerrarJogo();
+        return;
+      }
+
+      info.textContent = `Tentativas restantes: ${tentativasRestantes}`;
+      input.value = "";
+      input.focus();
+    }
+
+    function encerrarJogo() {
+      document.getElementById("guessInput").disabled = true;
+      document.getElementById("restartBtn").style.display = "block";
+    }
+
+    function reiniciarJogo() {
+      iniciarJogo();
+    }
+
+    // Inicia o jogo ao carregar a página
+    window.onload = iniciarJogo;
+  </script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercícios com While - JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    .container {
+      max-width: 800px;
+      background: #fff;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+    }
+    button {
+      margin: 10px 0;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #2980b9;
+    }
+    pre {
+      background-color: #ecf0f1;
+      padding: 10px;
+      border-radius: 5px;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🌀 Exercícios com Laço While</h1>
+
+    <button onclick="exercicio1()">1. Contar de 1 a 10</button>
+    <button onclick="exercicio2()">2. Contagem Regressiva</button>
+    <button onclick="exercicio3()">3. Soma até digitar 0</button>
+    <button onclick="exercicio4()">4. Validar senha</button>
+    <button onclick="exercicio5()">5. Menu interativo</button>
+    <button onclick="exercicio6()">6. Adivinhe o número</button>
+    <button onclick="exercicio7()">7. Média de notas</button>
+    <button onclick="exercicio8()">8. Pares e ímpares</button>
+
+    <pre id="saida"></pre>
+  </div>
+
+  <script>
+    function exercicio1() {
+      let i = 1;
+      let resultado = '';
+      while (i <= 10) {
+        resultado += i + ' ';
+        i++;
+      }
+      document.getElementById('saida').textContent = resultado;
+    }
+
+    function exercicio2() {
+      let i = 10;
+      let resultado = '';
+      while (i >= 1) {
+        resultado += i + ' ';
+        i--;
+      }
+      document.getElementById('saida').textContent = resultado;
+    }
+
+    function exercicio3() {
+      let soma = 0;
+      let numero;
+      do {
+        numero = parseInt(prompt("Digite um número (0 para sair):"));
+        if (!isNaN(numero)) soma += numero;
+      } while (numero !== 0);
+      document.getElementById('saida').textContent = 'Soma total: ' + soma;
+    }
+
+    function exercicio4() {
+      let senhaCorreta = "javascript123";
+      let tentativa = prompt("Digite a senha:");
+      while (tentativa !== senhaCorreta) {
+        tentativa = prompt("Senha incorreta. Tente novamente:");
+      }
+      document.getElementById('saida').textContent = 'Acesso permitido!';
+    }
+
+    function exercicio5() {
+      let opcao;
+      let resultado = '';
+      while (opcao !== "3") {
+        opcao = prompt("1 - Dizer Olá\n2 - Mostrar Data\n3 - Sair");
+        if (opcao === "1") resultado += 'Olá!\n';
+        else if (opcao === "2") resultado += 'Data: ' + new Date().toLocaleDateString() + '\n';
+        else if (opcao !== "3") resultado += 'Opção inválida.\n';
+      }
+      document.getElementById('saida').textContent = resultado;
+    }
+
+    function exercicio6() {
+      let numeroSecreto = 7;
+      let chute = parseInt(prompt("Tente adivinhar o número (1 a 10):"));
+      while (chute !== numeroSecreto) {
+        chute = parseInt(prompt("Errado! Tente novamente:"));
+      }
+      document.getElementById('saida').textContent = 'Parabéns! Você acertou.';
+    }
+
+    function exercicio7() {
+      let total = 0;
+      let quantidade = 0;
+      let nota = parseFloat(prompt("Digite uma nota (-1 para sair):"));
+      while (nota !== -1) {
+        if (!isNaN(nota)) {
+          total += nota;
+          quantidade++;
+        }
+        nota = parseFloat(prompt("Digite outra nota (-1 para sair):"));
+      }
+      let media = quantidade > 0 ? (total / quantidade).toFixed(2) : 0;
+      document.getElementById('saida').textContent = 'Média: ' + media;
+    }
+
+    function exercicio8() {
+      let pares = 0;
+      let impares = 0;
+      let num = parseInt(prompt("Digite um número (0 para sair):"));
+      while (num !== 0) {
+        if (num % 2 === 0) pares++;
+        else impares++;
+        num = parseInt(prompt("Digite outro número (0 para sair):"));
+      }
+      document.getElementById('saida').textContent = `Pares: ${pares}, Ímpares: ${impares}`;
+    }
+  </script>
+</body>
+</html>

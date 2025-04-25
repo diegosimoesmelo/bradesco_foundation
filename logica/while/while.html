@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// 1. Contar de 1 a 10 com while
+// Objetivo: Compreender o funcionamento básico do while.
+
+let i = 1;
+while (i <= 10) {
+  console.log(i);
+  i++;
+}
+// 🔹 2. Contagem regressiva de 10 até 1
+// Objetivo: Usar o while de forma decrescente.
+
+let i = 10;
+while (i >= 1) {
+  console.log(i);
+  i--;
+ }
+// 🔹 3. Somar números digitados até digitar 0
+// Objetivo: Repetir até uma condição de parada lógica.
+
+let soma = 0;
+let numero = parseInt(prompt("Digite um número (0 para sair):"));
+
+while (numero !== 0) {
+  soma += numero;
+  numero = parseInt(prompt("Digite outro número (0 para sair):"));
+}
+
+console.log("Soma total:", soma);
+// 🔹 4. Validar senha até o usuário acertar
+// Objetivo: Criar loops que garantem entrada válida.
+
+let senhaCorreta = "javascript123";
+let tentativa = prompt("Digite a senha:");
+
+while (tentativa !== senhaCorreta) {
+  tentativa = prompt("Senha incorreta. Tente novamente:");
+}
+
+console.log("Acesso permitido!");
+
+// 🔹 6. Adivinhe o número
+// Objetivo: Criar jogos com tentativa até acerto.
+
+let numeroSecreto = 7;
+let chute = parseInt(prompt("Tente adivinhar o número (entre 1 e 10):"));
+
+while (chute !== numeroSecreto) {
+  chute = parseInt(prompt("Errado! Tente novamente:"));
+}
+
+alert("Parabéns! Você acertou.");
+
+    </script>
+</body>
+</html>

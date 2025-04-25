@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Funções de Array em JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background-color: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+      text-align: center;
+      color: #2c3e50;
+      margin-bottom: 40px;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+    }
+    .item {
+      margin: 15px 0;
+    }
+    .item span {
+      display: inline-block;
+      width: 140px;
+      font-weight: bold;
+      color: #2c3e50;
+    }
+    .description {
+      margin-left: 10px;
+      display: block;
+      color: #555;
+    }
+    code {
+      background-color: #ecf0f1;
+      padding: 2px 6px;
+      border-radius: 5px;
+      font-size: 0.95em;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🧠 Funções de Array em JavaScript</h1>
+
+    <h2>🔷 Inserção e Remoção</h2>
+    <div class="item">
+      <span>push()</span> ➤ <code>array.push('item')</code>
+      <span class="description">Adiciona um elemento no final do array.</span>
+    </div>
+    <div class="item">
+      <span>pop()</span> ➤ <code>array.pop()</code>
+      <span class="description">Remove o último elemento do array.</span>
+    </div>
+    <div class="item">
+      <span>unshift()</span> ➤ <code>array.unshift('item')</code>
+      <span class="description">Adiciona um elemento no início do array.</span>
+    </div>
+    <div class="item">
+      <span>shift()</span> ➤ <code>array.shift()</code>
+      <span class="description">Remove o primeiro elemento do array.</span>
+    </div>
+
+    <h2>🔷 Informação e Busca</h2>
+    <div class="item">
+      <span>length</span> ➤ <code>array.length</code>
+      <span class="description">Retorna a quantidade de elementos no array.</span>
+    </div>
+    <div class="item">
+      <span>includes()</span> ➤ <code>array.includes('valor')</code>
+      <span class="description">Verifica se um valor está presente no array (true ou false).</span>
+    </div>
+    <div class="item">
+      <span>indexOf()</span> ➤ <code>array.indexOf('item')</code>
+      <span class="description">Retorna o índice da primeira ocorrência do valor ou -1 se não for encontrado.</span>
+    </div>
+
+    <h2>🔷 Manipulação Direta</h2>
+    <div class="item">
+      <span>splice()</span> ➤ <code>array.splice(1, 2)</code>
+      <span class="description">Adiciona, remove ou substitui elementos no array.</span>
+    </div>
+    <div class="item">
+      <span>slice()</span> ➤ <code>array.slice(0, 3)</code>
+      <span class="description">Retorna uma cópia de parte do array, sem modificar o original.</span>
+    </div>
+
+    <h2>🔷 Iteração e Transformação</h2>
+    <div class="item">
+      <span>forEach()</span> ➤ <code>array.forEach(item => console.log(item))</code>
+      <span class="description">Executa uma função para cada elemento do array.</span>
+    </div>
+    <div class="item">
+      <span>map()</span> ➤ <code>array.map(item => item * 2)</code>
+      <span class="description">Cria um novo array com os resultados da função aplicada a cada elemento.</span>
+    </div>
+    <div class="item">
+      <span>filter()</span> ➤ <code>array.filter(item => item > 10)</code>
+      <span class="description">Cria um novo array contendo apenas os elementos que passam em um teste lógico.</span>
+    </div>
+    <div class="item">
+      <span>reduce()</span> ➤ <code>array.reduce((acc, item) => acc + item, 0)</code>
+      <span class="description">Reduz o array a um único valor acumulado (ex: soma, média).</span>
+    </div>
+
+    <h2>🔷 Ordenação</h2>
+    <div class="item">
+      <span>sort()</span> ➤ <code>array.sort()</code>
+      <span class="description">Ordena os elementos do array como strings por padrão.</span>
+    </div>
+    <div class="item">
+      <span>reverse()</span> ➤ <code>array.reverse()</code>
+      <span class="description">Inverte a ordem dos elementos no array.</span>
+    </div>
+  </div>
+</body>
+</html>
