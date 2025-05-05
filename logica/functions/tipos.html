@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Tipos de Funções em JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h2 { color: #2c3e50; margin-top: 40px; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    .secao { margin-bottom: 40px; }
+    table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: center; }
+    th { background-color: #f0f0f0; }
+  </style>
+</head>
+<body>
+
+  <h1>Tipos de Funções em JavaScript</h1>
+
+  <div class="secao">
+    <h2>1. Função Declarada</h2>
+    <p>São nomeadas e carregadas pelo interpretador antes da execução do código.</p>
+    <pre>
+function saudacao() {
+  return "Olá!";
+}
+console.log(saudacao());</pre>
+    <script>
+      function saudacao() {
+        console.log("Função declarada: Olá!");
+      }
+      saudacao();
+    </script>
+  </div>
+
+  <div class="secao">
+    <h2>2. Função Expressão (Anônima)</h2>
+    <p>Função sem nome atribuída a uma variável. Não sofre hoisting.</p>
+    <pre>
+const soma = function(a, b) {
+  return a + b;
+};
+console.log(soma(3, 4));</pre>
+    <script>
+      const soma = function(a, b) {
+        console.log("Função expressão:", a + b);
+      };
+      soma(3, 4);
+    </script>
+  </div>
+
+  <div class="secao">
+    <h2>3. Arrow Function</h2>
+    <p>Função de sintaxe curta, sem seu próprio <code>this</code>.</p>
+    <pre>
+const dobro = x => x * 2;
+console.log(dobro(5));</pre>
+    <script>
+      const dobro = x => console.log("Arrow Function:", x * 2);
+      dobro(5);
+    </script>
+  </div>
+
+  <div class="secao">
+    <h2>4. IIFE (Função Autoexecutável)</h2>
+    <p>Executa assim que é definida. Útil para encapsular código.</p>
+    <pre>
+(function() {
+  console.log("Executada automaticamente!");
+})();</pre>
+    <script>
+      (function() {
+        console.log("IIFE: Executada automaticamente!");
+      })();
+    </script>
+  </div>
+
+  <div class="secao">
+    <h2>5. Callback</h2>
+    <p>Função passada como argumento para outra função.</p>
+    <pre>
+function mostrar(msg) {
+  console.log("Callback:", msg);
+}
+function processar(valor, funcaoCallback) {
+  funcaoCallback(valor);
+}
+processar("Exemplo", mostrar);</pre>
+    <script>
+      function mostrar(msg) {
+        console.log("Callback:", msg);
+      }
+      function processar(valor, callback) {
+        callback(valor);
+      }
+      processar("Exemplo de callback", mostrar);
+    </script>
+  </div>
+
+  <div class="secao">
+    <h2>Tabela Comparativa</h2>
+    <table>
+      <tr>
+        <th>Tipo</th>
+        <th>Nomeada?</th>
+        <th>Hoisting?</th>
+        <th><code>this</code> próprio?</th>
+        <th>Uso Comum</th>
+      </tr>
+      <tr>
+        <td>Declarada</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>✅</td>
+        <td>Funções reutilizáveis</td>
+      </tr>
+      <tr>
+        <td>Expressão/Anônima</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>✅</td>
+        <td>Funções internas, temporárias</td>
+      </tr>
+      <tr>
+        <td>Arrow Function</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>❌</td>
+        <td>Callbacks, funções curtas</td>
+      </tr>
+      <tr>
+        <td>IIFE</td>
+        <td>Opcional</td>
+        <td>✅ (executa na definição)</td>
+        <td>✅</td>
+        <td>Escopos isolados</td>
+      </tr>
+      <tr>
+        <td>Callback</td>
+        <td>Opcional</td>
+        <td>❌</td>
+        <td>Depende</td>
+        <td>Eventos, assincronismo</td>
+      </tr>
+    </table>
+  </div>
+
+</body>
+</html>

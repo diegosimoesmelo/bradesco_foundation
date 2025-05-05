@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios de Funções em JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; line-height: 1.6; }
+    h2 { color: #1e90ff; margin-top: 30px; }
+    .exercicio { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; border-radius: 10px; }
+    button { margin-top: 10px; }
+    input { margin: 5px 0; padding: 5px; width: 100%; }
+    pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+  </style>
+</head>
+<body>
+
+  <h1>Exercícios de Funções em JavaScript - Contextualizados</h1>
+
+  <!-- Exercício 1 -->
+  <div class="exercicio">
+    <h2>1. Conta do Restaurante com Gorjeta</h2>
+    <input id="valorConta" type="number" placeholder="Valor da conta">
+    <button onclick="ex1()">Calcular Total</button>
+    <p id="res1"></p>
+    <script>
+      function ex1() {
+        const valor = parseFloat(document.getElementById('valorConta').value);
+        const total = valor + (valor * 0.10);
+        document.getElementById('res1').innerText = `Total com gorjeta: R$ ${total.toFixed(2)}`;
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 2 -->
+  <div class="exercicio">
+    <h2>2. Conversor de Celsius para Fahrenheit</h2>
+    <input id="celsius" type="number" placeholder="Temperatura em Celsius">
+    <button onclick="ex2()">Converter</button>
+    <p id="res2"></p>
+    <script>
+      function ex2() {
+        const c = parseFloat(document.getElementById('celsius').value);
+        const f = c * 9 / 5 + 32;
+        document.getElementById('res2').innerText = `${c}°C = ${f.toFixed(1)}°F`;
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 3 -->
+  <div class="exercicio">
+    <h2>3. Divisão da Conta entre Amigos</h2>
+    <input id="totalConta" type="number" placeholder="Valor total da conta">
+    <input id="numAmigos" type="number" placeholder="Número de amigos">
+    <button onclick="ex3()">Dividir</button>
+    <p id="res3"></p>
+    <script>
+      function ex3() {
+        const total = parseFloat(document.getElementById('totalConta').value);
+        const amigos = parseInt(document.getElementById('numAmigos').value);
+        if (amigos === 0) {
+          document.getElementById('res3').innerText = "Erro: divisão por zero!";
+        } else {
+          const cadaUm = total / amigos;
+          document.getElementById('res3').innerText = `Cada um deve pagar: R$ ${cadaUm.toFixed(2)}`;
+        }
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 4 -->
+  <div class="exercicio">
+    <h2>4. Consumo Médio de Combustível</h2>
+    <input id="distancia" type="number" placeholder="Distância (km)">
+    <input id="litros" type="number" placeholder="Litros consumidos">
+    <button onclick="ex4()">Calcular Consumo</button>
+    <p id="res4"></p>
+    <script>
+      function ex4() {
+        const d = parseFloat(document.getElementById('distancia').value);
+        const l = parseFloat(document.getElementById('litros').value);
+        if (l === 0) {
+          document.getElementById('res4').innerText = "Erro: litros não pode ser zero!";
+        } else {
+          const consumo = d / l;
+          document.getElementById('res4').innerText = `Consumo médio: ${consumo.toFixed(2)} km/l`;
+        }
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 5 -->
+  <div class="exercicio">
+    <h2>5. Verificar Horário Comercial</h2>
+    <input id="horaAtual" type="number" placeholder="Informe a hora (0-23)">
+    <button onclick="ex5()">Verificar</button>
+    <p id="res5"></p>
+    <script>
+      function ex5() {
+        const hora = parseInt(document.getElementById('horaAtual').value);
+        const status = (hora >= 8 && hora < 18) ? "Aberto" : "Fechado";
+        document.getElementById('res5').innerText = `Status da loja: ${status}`;
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 6 -->
+  <div class="exercicio">
+    <h2>6. Alarme Inteligente</h2>
+    <input id="horaDormir" type="number" placeholder="Hora de dormir (0-23)">
+    <button onclick="ex6()">Calcular hora de acordar</button>
+    <p id="res6"></p>
+    <script>
+      function ex6() {
+        const dormir = parseInt(document.getElementById('horaDormir').value);
+        const acordar = (dormir + 8) % 24;
+        document.getElementById('res6').innerText = `Você deve acordar às ${acordar}h`;
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 7 -->
+  <div class="exercicio">
+    <h2>7. Validação de Senha</h2>
+    <input id="senha" type="text" placeholder="Digite a senha">
+    <button onclick="ex7()">Validar</button>
+    <p id="res7"></p>
+    <script>
+      function ex7() {
+        const senha = document.getElementById('senha').value;
+        const valida = senha.length >= 8;
+        document.getElementById('res7').innerText = valida ? "Senha válida" : "Senha inválida (mínimo 8 caracteres)";
+      }
+    </script>
+  </div>
+
+  <!-- Exercício 8 -->
+  <div class="exercicio">
+    <h2>8. Calculadora de IMC</h2>
+    <input id="peso" type="number" placeholder="Peso (kg)">
+    <input id="altura" type="number" step="0.01" placeholder="Altura (m)">
+    <button onclick="ex8()">Calcular IMC</button>
+    <p id="res8"></p>
+    <script>
+      function ex8() {
+        const peso = parseFloat(document.getElementById('peso').value);
+        const altura = parseFloat(document.getElementById('altura').value);
+        const imc = peso / (altura * altura);
+        document.getElementById('res8').innerText = `Seu IMC é ${imc.toFixed(2)}`;
+      }
+    </script>
+  </div>
+
+</body>
+</html>

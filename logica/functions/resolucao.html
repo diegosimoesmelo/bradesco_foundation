@@ -1,0 +1,92 @@
+✅ Exercício 1: Calcular Conta do Restaurante
+javascript
+CopiarEditar
+function calcularTotalComGorjeta(valorConta) {
+    const gorjeta = valorConta * 0.10;
+    return valorConta + gorjeta;
+}
+
+console.log(calcularTotalComGorjeta(100)); // Saída: 110
+
+
+✅ Exercício 2: Conversor de Temperatura
+<script>
+    function celsiusParaFahrenheit(celsius) {
+    return celsius * 9 / 5 + 32;
+}
+
+console.log(celsiusParaFahrenheit(30)); // Saída: 86
+
+</script>
+
+
+✅ Exercício 3: Divisão da Conta entre Amigos
+javascript
+CopiarEditar
+function dividirConta(total, numeroDeAmigos) {
+    if (numeroDeAmigos === 0) return "Erro: divisão por zero!";
+    return total / numeroDeAmigos;
+}
+
+console.log(dividirConta(120, 4)); // Saída: 30
+
+
+✅ Exercício 4: Consumo Médio de Combustível
+javascript
+CopiarEditar
+function calcularConsumo(distanciaKm, litrosConsumidos) {
+    if (litrosConsumidos === 0) return "Erro: consumo inválido!";
+    return distanciaKm / litrosConsumidos;
+}
+
+console.log(calcularConsumo(600, 40)); // Saída: 15
+
+
+✅ Exercício 5: Verificar Horário Comercial
+javascript
+CopiarEditar
+function verificarHorario(hora) {
+    if (hora >= 8 && hora < 18) {
+        return "Aberto";
+    } else {
+        return "Fechado";
+    }
+}
+
+console.log(verificarHorario(10)); // Saída: "Aberto"
+console.log(verificarHorario(20)); // Saída: "Fechado"
+
+
+✅ Exercício 6: Alarme Inteligente
+javascript
+CopiarEditar
+function calcularHorarioAcordar(horaDormir) {
+    let horaAcordar = (horaDormir + 8) % 24;
+    return horaAcordar;
+}
+
+console.log(calcularHorarioAcordar(22)); // Saída: 6
+
+
+✅ Exercício 7: Validação Simples de Senha
+javascript
+CopiarEditar
+function validarSenha(senha) {
+    return senha.length >= 8;
+}
+
+console.log(validarSenha("123456")); // false
+console.log(validarSenha("minhasenha123")); // true
+
+
+✅ Exercício 8: Calculadora de 
+IMC
+javascript
+CopiarEditar
+function calcularIMC(peso, altura) {
+    const imc = peso / (altura ** 2);
+    return imc.toFixed(2);
+}
+
+console.log(calcularIMC(70, 1.75)); // Saída: "22.86"
+
