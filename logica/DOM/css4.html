@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Alterar Opacidade</title>
+  <style>
+    #caixaOpacidade {
+      width: 200px;
+      height: 200px;
+      background-color: blue;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="caixaOpacidade"></div>
+  <button onclick="alterarOpacidade()">Alterar Opacidade</button>
+
+  <script>
+    function alterarOpacidade() {
+      let caixa = document.getElementById('caixaOpacidade');
+      caixa.style.opacity = '0.5';  // Alterando a opacidade
+    }
+  </script>
+
+</body>
+</html>

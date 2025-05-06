@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=], initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 1 -->
+    <div id="meuTexto">Texto inicial</div>
+    <button onclick="mudarTexto()">Clique Aqui</button>
+
+    <div id="meuTextoHTML">Texto inicial</div>
+    <button onclick="mudarTextoHTML()">Clique Aqui</button>
+
+
+    <!-- 2 -->
+    <p id="textoCor">Este texto mudará de cor!</p>
+    <button onclick="mudarCor()">Mudar Cor</button>
+    
+    
+    
+    <script>
+        // 1
+        function mudarTexto() {
+        document.getElementById('meuTexto').innerText = "Texto alterado por JS!";
+}
+function mudarTextoHTML() {
+        document.getElementById('meuTextoHTML').innerHTML = "<strong>Texto alterado por JS!</strong>";
+}
+        // 2
+        function mudarCor() {
+            const texto = document.getElementById('textoCor');
+            texto.style.color = "blue";
+            texto.style.fontWeight = "bold";
+        }
+        
+
+    </script>
+
+
+</body>
+</html>

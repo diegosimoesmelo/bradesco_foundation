@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Alterar Cor de Fundo</title>
+  <style>
+    #caixa {
+      width: 200px;
+      height: 200px;
+      background-color: lightblue;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="caixa"></div>
+  <button onclick="mudarCor()">Mudar Cor de Fundo</button>
+
+  <script>
+    function mudarCor() {
+      let caixa = document.getElementById('caixa');
+      caixa.style.backgroundColor = 'lightgreen';  // Alterando a cor de fundo
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Alterar Tamanho da Fonte</title>
+  <style>
+    #texto {
+      font-size: 16px;
+    }
+  </style>
+</head>
+<body>
+
+  <p id="texto">Texto de exemplo</p>
+  <button onclick="alterarTamanho()">Alterar Tamanho da Fonte</button>
+
+  <script>
+    function alterarTamanho() {
+      let texto = document.getElementById('texto');
+      texto.style.fontSize = '24px';  // Alterando o tamanho da fonte
+    }
+  </script>
+
+</body>
+</html>

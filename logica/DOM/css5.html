@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Alternar Modo</title>
+  <style>
+    body {
+      background-color: white;
+      color: black;
+    }
+    .modoEscuro {
+      background-color: black;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <button onclick="alternarModo()">Alternar Modo</button>
+
+  <script>
+    function alternarModo() {
+      let body = document.body;
+      body.classList.toggle('modoEscuro');  // Alterna entre os modos claro e escuro
+    }
+  </script>
+<!-- <button onclick="alternarModo()">Alternar Modo</button>
+
+<script>
+  function alternarModo() {
+    let body = document.body;
+    if (body.style.backgroundColor === 'black') {
+      body.style.backgroundColor = 'white';  // Modo claro
+      body.style.color = 'black';  // Texto preto
+    } else {
+      body.style.backgroundColor = 'black';  // Modo escuro
+      body.style.color = 'white';  // Texto branco
+    }
+  }
+</script> -->
+</body>
+</html>

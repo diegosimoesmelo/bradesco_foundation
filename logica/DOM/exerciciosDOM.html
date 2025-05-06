@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <!-- exercício 1  -->
+    <h1 id="tituloPostagem">Título Original da Postagem</h1>
+<button onclick="alterarTitulo()">Alterar Título</button>
+
+<script>
+    function alterarTitulo() {
+      let titulo = document.getElementById('tituloPostagem');
+      titulo.textContent = 'Novo Título da Postagem';  
+    }
+  </script>
+  
+<!-- exercício 2 -->
+  <input type="text" id="nomeUsuario" placeholder="Digite seu nome">
+  <button onclick="mostrarBoasVindas()">Exibir Boas-Vindas</button>
+  <p id="mensagemBoasVindas"></p>
+  
+  <script>
+    function mostrarBoasVindas() {
+      let nome = document.getElementById('nomeUsuario').value;
+      let mensagem = document.getElementById('mensagemBoasVindas');
+      mensagem.textContent = 'Bem-vindo, ' + nome + '!'; 
+    }
+  </script>
+  <!-- exercício 3 -->
+  <select id="produto" onchange="atualizarPreco()">
+    <option value="50">Branca - R$50,00</option>
+    <option value="60">Preta - R$60,00</option>
+    <option value="70">Azul - R$70,00</option>
+  </select>
+  
+  <p>Preço: R$<span id="resultadoPreco">50,00</span></p>
+  
+  <script>
+    function atualizarPreco() {
+      let valor = document.getElementById('produto').value;
+      let preco = document.getElementById('resultadoPreco');
+      preco.textContent = valor;  
+    }
+  </script>
+  
+<!-- exercicio 4 -->
+<button onclick="adicionarItem()">Adicionar Item</button>
+<p id="quantidadeCarrinho">Quantidade de Itens: 0</p>
+
+<script>
+  let quantidade = 0;
+
+  function adicionarItem() {
+    quantidade += 1;
+    let carrinho = document.getElementById('quantidadeCarrinho');
+    carrinho.textContent = 'Quantidade de Itens: ' + quantidade; 
+  }
+</script>
+
+
+
+<!-- exercicio 5  -->
+<input type="text" id="descricaoProduto" placeholder="Digite o que vai aparecer">
+<button onclick="atualizarDescricao()">Atualizar</button>
+<p id="descricaoExibida"></p>
+
+<script>
+  function atualizarDescricao() {
+    let descricao = document.getElementById('descricaoProduto').value;
+    let descricaoExibida = document.getElementById('descricaoExibida');
+    descricaoExibida.innerHTML = descricao;  
+  }
+</script>
+
+<!-- exercicio 6 -->
+<div id="listaLinks"></div>
+<button onclick="adicionarLinks()">Adicionar Links</button>
+
+<script>
+  function adicionarLinks() {
+    let lista = document.getElementById('listaLinks');
+    lista.innerHTML = '<ul><li><a href="https://www.google.com">Google</a></li><li><a href="https://www.github.com">GitHub</a></li><li><a href="https://www.stackoverflow.com">Stack Overflow</a></li></ul>'; 
+  }
+</script>
+
+
+
+</body>
+</html>

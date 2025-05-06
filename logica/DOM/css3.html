@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Alterar Estilo da Bordo</title>
+  <style>
+    #caixaBorda {
+      width: 200px;
+      height: 200px;
+      border: 2px solid black;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="caixaBorda"></div>
+  <button onclick="alterarBorda()">Alterar Bordo</button>
+
+  <script>
+    function alterarBorda() {
+      let caixa = document.getElementById('caixaBorda');
+      caixa.style.border = '4px dotted red';  // Alterando o estilo da borda
+    }
+  </script>
+
+</body>
+</html>
