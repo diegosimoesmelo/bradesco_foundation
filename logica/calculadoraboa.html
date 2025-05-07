@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculadora Avançada</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #1e1e2f;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .calculator {
+      background: #2e2e40;
+      padding: 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+      width: 320px;
+    }
+
+    .display {
+      background: #1e1e2f;
+      border: none;
+      color: #fff;
+      font-size: 32px;
+      padding: 20px;
+      width: 100%;
+      text-align: right;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+
+    .buttons {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+    }
+
+    .btn {
+      background: #444;
+      border: none;
+      font-size: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: #666;
+    }
+
+    .btn.operator {
+      background: #f57c00;
+      color: white;
+    }
+
+    .btn.operator:hover {
+      background: #fb8c00;
+    }
+
+    .btn.equal {
+      background: #43a047;
+      color: white;
+      grid-column: span 2;
+    }
+
+    .btn.equal:hover {
+      background: #66bb6a;
+    }
+
+    .btn.wide {
+      grid-column: span 2;
+    }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="display" class="display" value="0" readonly>
+
+    <div class="buttons">
+      <button class="btn" onclick="clearAll()">AC</button>
+      <button class="btn" onclick="clearEntry()">C</button>
+      <button class="btn" onclick="invertSign()">±</button>
+      <button class="btn operator" onclick="setOperator('/')">÷</button>
+
+      <button class="btn" onclick="appendNumber('7')">7</button>
+      <button class="btn" onclick="appendNumber('8')">8</button>
+      <button class="btn" onclick="appendNumber('9')">9</button>
+      <button class="btn operator" onclick="setOperator('*')">×</button>
+
+      <button class="btn" onclick="appendNumber('4')">4</button>
+      <button class="btn" onclick="appendNumber('5')">5</button>
+      <button class="btn" onclick="appendNumber('6')">6</button>
+      <button class="btn operator" onclick="setOperator('-')">−</button>
+
+      <button class="btn" onclick="appendNumber('1')">1</button>
+      <button class="btn" onclick="appendNumber('2')">2</button>
+      <button class="btn" onclick="appendNumber('3')">3</button>
+      <button class="btn operator" onclick="setOperator('+')">+</button>
+
+      <button class="btn" onclick="appendNumber('0')">0</button>
+      <button class="btn" onclick="appendDot()">.</button>
+      <button class="btn equal" onclick="calculate()">=</button>
+    </div>
+  </div>
+
+  <script>
+    let currentInput = '0';
+    let previousInput = null;
+    let operator = null;
+    let resultShown = false;
+
+    const display = document.getElementById('display');
+
+    function updateDisplay() {
+      display.value = currentInput;
+    }
+
+    function appendNumber(number) {
+      if (currentInput === '0' || resultShown) {
+        currentInput = number;
+        resultShown = false;
+      } else {
+        currentInput += number;
+      }
+      updateDisplay();
+    }
+
+    function appendDot() {
+      if (!currentInput.includes('.')) {
+        currentInput += '.';
+        updateDisplay();
+      }
+    }
+
+    function clearAll() {
+      currentInput = '0';
+      previousInput = null;
+      operator = null;
+      updateDisplay();
+    }
+
+    function clearEntry() {
+      currentInput = '0';
+      updateDisplay();
+    }
+
+    function invertSign() {
+      if (currentInput !== '0') {
+        currentInput = String(parseFloat(currentInput) * -1);
+        updateDisplay();
+      }
+    }
+
+    function setOperator(op) {
+      if (operator !== null && !resultShown) {
+        calculate();
+      }
+      previousInput = currentInput;
+      operator = op;
+      resultShown = true;
+    }
+
+    function calculate() {
+      if (!operator || previousInput === null) return;
+
+      const a = parseFloat(previousInput);
+      const b = parseFloat(currentInput);
+      let result = 0;
+
+      switch (operator) {
+        case '+': result = a + b; break;
+        case '-': result = a - b; break;
+        case '*': result = a * b; break;
+        case '/': result = b !== 0 ? a / b : 'Erro'; break;
+      }
+
+      currentInput = String(result);
+      operator = null;
+      previousInput = null;
+      resultShown = true;
+      updateDisplay();
+    }
+
+    // Suporte a teclado físico
+    document.addEventListener('keydown', function (e) {
+      if (!isNaN(e.key)) appendNumber(e.key);
+      if (['+', '-', '*', '/'].includes(e.key)) setOperator(e.key);
+      if (e.key === 'Enter') calculate();
+      if (e.key === 'Backspace') clearEntry();
+      if (e.key === '.') appendDot();
+      if (e.key === 'Escape') clearAll();
+    });
+  </script>
+</body>
+</html>

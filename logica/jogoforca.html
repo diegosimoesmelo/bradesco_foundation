@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Jogo da Forca Completo</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding-top: 30px;
+    }
+
+    canvas {
+      background: #fff;
+      border: 1px solid #333;
+      margin-bottom: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #mensagem {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🔤 Jogo da Forca</h1>
+
+  <canvas id="forca" width="200" height="250"></canvas>
+
+  <p id="palavra">Palavra: _ _ _ _</p>
+  <p>Letras digitadas: <span id="letras"></span></p>
+  <p>Erros: <span id="erros">0</span> de 6</p>
+  <p id="mensagem"></p>
+
+  <button onclick="iniciarJogo()">🔁 Jogar Novamente</button>
+
+  <script>
+    const palavras = ["MANGA", "BANANA", "CHUVEIRO", "LARANJA", "BRASIL", "JAVASCRIPT", "HTML", "CADEIRA"];
+    const canvas = document.getElementById('forca');
+    const ctx = canvas.getContext('2d');
+
+    let palavraSecreta;
+    let letrasCertas;
+    let letrasErradas;
+    const maxErros = 6;
+
+    function sortearPalavra() {
+      return palavras[Math.floor(Math.random() * palavras.length)];
+    }
+
+    function mostrarPalavra() {
+      const exibicao = palavraSecreta
+        .split('')
+        .map(l => letrasCertas.includes(l) ? l : '_')
+        .join(' ');
+      document.getElementById('palavra').textContent = `Palavra: ${exibicao}`;
+    }
+
+    function atualizarStatus() {
+      document.getElementById('erros').textContent = letrasErradas.length;
+      document.getElementById('letras').textContent = letrasErradas.join(', ');
+    }
+
+    function desenharForca(erros) {
+      ctx.clearRect(0, 0, 200, 250);
+
+      // Base
+      ctx.beginPath();
+      ctx.moveTo(10, 240); ctx.lineTo(190, 240); ctx.stroke();
+
+      // Poste vertical
+      ctx.beginPath();
+      ctx.moveTo(50, 240); ctx.lineTo(50, 20); ctx.stroke();
+
+      // Poste horizontal
+      ctx.beginPath();
+      ctx.moveTo(50, 20); ctx.lineTo(150, 20); ctx.stroke();
+
+      // Corda
+      ctx.beginPath();
+      ctx.moveTo(150, 20); ctx.lineTo(150, 50); ctx.stroke();
+
+      if (erros > 0) { // cabeça
+        ctx.beginPath();
+        ctx.arc(150, 70, 20, 0, Math.PI * 2); ctx.stroke();
+      }
+      if (erros > 1) { // corpo
+        ctx.beginPath();
+        ctx.moveTo(150, 90); ctx.lineTo(150, 150); ctx.stroke();
+      }
+      if (erros > 2) { // braço esquerdo
+        ctx.beginPath();
+        ctx.moveTo(150, 110); ctx.lineTo(130, 130); ctx.stroke();
+      }
+      if (erros > 3) { // braço direito
+        ctx.beginPath();
+        ctx.moveTo(150, 110); ctx.lineTo(170, 130); ctx.stroke();
+      }
+      if (erros > 4) { // perna esquerda
+        ctx.beginPath();
+        ctx.moveTo(150, 150); ctx.lineTo(130, 190); ctx.stroke();
+      }
+      if (erros > 5) { // perna direita
+        ctx.beginPath();
+        ctx.moveTo(150, 150); ctx.lineTo(170, 190); ctx.stroke();
+      }
+    }
+
+    function verificarFim() {
+      const venceu = palavraSecreta.split('').every(l => letrasCertas.includes(l));
+      if (venceu) {
+        document.getElementById('mensagem').textContent = "🎉 Você venceu!";
+        document.removeEventListener('keydown', registrarLetra);
+      }
+
+      if (letrasErradas.length >= maxErros) {
+        document.getElementById('mensagem').textContent = `💀 Você perdeu! A palavra era "${palavraSecreta}".`;
+        document.removeEventListener('keydown', registrarLetra);
+      }
+    }
+
+    function registrarLetra(evento) {
+      const letra = evento.key.toUpperCase();
+      if (!letra.match(/^[A-Z]$/)) return;
+
+      if (palavraSecreta.includes(letra)) {
+        if (!letrasCertas.includes(letra)) letrasCertas.push(letra);
+      } else {
+        if (!letrasErradas.includes(letra)) letrasErradas.push(letra);
+      }
+
+      mostrarPalavra();
+      atualizarStatus();
+      desenharForca(letrasErradas.length);
+      verificarFim();
+    }
+
+    function iniciarJogo() {
+      palavraSecreta = sortearPalavra();
+      letrasCertas = [];
+      letrasErradas = [];
+      document.getElementById('mensagem').textContent = "";
+      mostrarPalavra();
+      atualizarStatus();
+      desenharForca(0);
+
+      // Garante que só tenha um ouvinte
+      document.removeEventListener('keydown', registrarLetra);
+      document.addEventListener('keydown', registrarLetra);
+    }
+
+    // Inicia o jogo ao carregar a página
+    iniciarJogo();
+  </script>
+
+</body>
+</html>
