@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="leitura">Este é um texto ajustável.</p>
+<button onclick="aumentarFonte()">Aumentar Fonte</button>
+<button onclick="diminuirFonte()">Diminuir Fonte</button>
+
+<script>
+  let tamanhoFonte = 16;
+
+  function aumentarFonte() {
+    tamanhoFonte += 2;
+    document.getElementById("leitura").style.fontSize = tamanhoFonte + "px";
+  }
+
+  function diminuirFonte() {
+    tamanhoFonte -= 2;
+    document.getElementById("leitura").style.fontSize = tamanhoFonte + "px";
+  }
+</script>
+
+</body>
+</html>

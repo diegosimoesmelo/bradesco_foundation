@@ -1,0 +1,19 @@
+<form onsubmit="return validarFormulario()">
+    <label>Nome:</label>
+    <input id="nome" type="text" />
+    <button type="submit">Enviar</button>
+  </form>
+  
+  <script>
+    function validarFormulario() {
+      const campo = document.getElementById("nome");
+      if (campo.value.trim() === "") {
+        campo.style.border = "2px solid red";
+        return false;
+      } else {
+        campo.style.border = "2px solid green";
+        return true;
+      }
+    }
+  </script>
+  

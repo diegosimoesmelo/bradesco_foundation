@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .destaque {
+          background-color: yellow;
+          font-weight: bold;
+        }
+      </style>
+      
+      <p id="meuTexto">Clique no botão para destacar este texto.</p>
+      <button onclick="destacarTexto()">Destacar</button>
+      
+      <script>
+        function destacarTexto() {
+          const texto = document.getElementById("meuTexto");
+          texto.classList.toggle("destaque");
+        }
+      </script>
+</body>
+</html>

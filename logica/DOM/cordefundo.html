@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="caixa" style="width: 200px; height: 100px; background-color: lightblue; transition: background-color 0.5s;"></div>
+<br>
+<button onclick="mudarCor()">Mudar Cor</button>
+
+<script>
+  function mudarCor() {
+    const caixa = document.getElementById("caixa");
+    caixa.style.backgroundColor = caixa.style.backgroundColor === "lightblue" ? "lightcoral" : "lightblue";
+  }
+</script>
+
+</body>
+</html>

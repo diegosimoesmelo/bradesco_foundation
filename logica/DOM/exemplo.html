@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Manipulação de CSS com JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    section {
+      margin-bottom: 40px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+
+    h2 {
+      margin-top: 0;
+    }
+
+    input {
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    button {
+      padding: 6px 12px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Exercício 1: Alternar Modo -->
+  <section id="pagina" style="background-color: white; color: black;">
+    <h2>Exercício 1: Alternar Modo Escuro/Claro</h2>
+    <p>Este botão alterna o tema do site entre claro e escuro.</p>
+    <button onclick="alternarModo()">Alternar Modo</button>
+  </section>
+
+  <!-- Exercício 2: Validação Visual de Campo -->
+  <section>
+    <h2>Exercício 2: Validação de Campo Obrigatório</h2>
+    <form onsubmit="return validarFormulario()">
+      <label for="nome">Nome:</label>
+      <input id="nome" type="text" placeholder="Digite seu nome" />
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- Exercício 3: Destaque de Produto -->
+  <section>
+    <h2>Exercício 3: Mostrar Produto em Promoção</h2>
+    <div id="produto" style="padding: 20px; border: 1px solid #ccc;">
+      <h3>Notebook Gamer</h3>
+      <p>R$ 5.000,00</p>
+      <button onclick="mostrarPromocao()">Ver Promoção</button>
+    </div>
+  </section>
+
+  <script>
+    // Exercício 1
+    let escuro = false;
+    function alternarModo() {
+      const pagina = document.getElementById("pagina");
+      if (!escuro) {
+        pagina.style.backgroundColor = "#121212";
+        pagina.style.color = "#f0f0f0";
+      } else {
+        pagina.style.backgroundColor = "white";
+        pagina.style.color = "black";
+      }
+      escuro = !escuro;
+    }
+
+    // Exercício 2
+    function validarFormulario() {
+      const campo = document.getElementById("nome");
+      if (campo.value.trim() === "") {
+        campo.style.border = "2px solid red";
+        return false;
+      } else {
+        campo.style.border = "2px solid green";
+        alert("Formulário enviado com sucesso!");
+        return true;
+      }
+    }
+
+    // Exercício 3
+    function mostrarPromocao() {
+      const card = document.getElementById("produto");
+      card.style.backgroundColor = "#fff9c4"; // amarelo claro
+      card.style.border = "2px solid blue";
+    }
+  </script>
+
+</body>
+</html>
