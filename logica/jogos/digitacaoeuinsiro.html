@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Digitação</title>
+  <link rel="stylesheet" href="digitacao.css">
+</head>
+<body>
+
+  <h1>Jogo de Digitação</h1>
+  
+  <p>Digite o texto abaixo o mais rápido possível:</p>
+  
+  <!-- Campo para o usuário inserir o texto -->
+  <input type="text" id="textoInput" placeholder="Digite o texto aqui..." autofocus>
+  <button id="iniciarJogo">Iniciar Jogo</button>
+
+  <p id="texto">Texto será exibido aqui após iniciar o jogo.</p>
+  <input type="text" id="campoTexto" placeholder="Digite o texto acima..." disabled>
+  
+  <p id="resultado"></p>
+  <p id="tempo">Tempo: <span id="contador">0</span> segundos</p>
+  <button id="reiniciar">Reiniciar Jogo</button>
+
+  <script>
+    let textoOriginal = ''; // Variável que armazenará o texto inserido
+    const textoExibido = document.getElementById('texto');
+    const campoTexto = document.getElementById('campoTexto');
+    const resultado = document.getElementById('resultado');
+    const contador = document.getElementById('contador');
+    const reiniciarButton = document.getElementById('reiniciar');
+    const iniciarButton = document.getElementById('iniciarJogo');
+    const textoInput = document.getElementById('textoInput');
+    
+    let tempoIniciado = false;
+    let tempo = 0;
+    let intervalId;
+
+    // Função para iniciar o cronômetro
+    function iniciarTempo() {
+      tempoIniciado = true;
+      intervalId = setInterval(function() {
+        tempo++;
+        contador.textContent = tempo;
+      }, 1000);
+    }
+
+    // Função para reiniciar o jogo
+    function reiniciarJogo() {
+      textoInput.value = '';
+      campoTexto.value = '';
+      textoExibido.textContent = 'Texto será exibido aqui após iniciar o jogo.';
+      resultado.textContent = '';
+      contador.textContent = '0';
+      tempo = 0;
+      campoTexto.disabled = true;
+      tempoIniciado = false;
+    }
+
+    // Função para iniciar o jogo com o texto inserido
+    iniciarButton.addEventListener('click', function() {
+      textoOriginal = textoInput.value.trim();
+
+      if (textoOriginal === '') {
+        alert('Por favor, insira um texto para o jogo!');
+        return;
+      }
+
+      textoExibido.textContent = textoOriginal;
+      campoTexto.disabled = false;
+      campoTexto.focus();
+    });
+
+    // Inicia a contagem do tempo ao começar a digitar
+    campoTexto.addEventListener('input', function() {
+      // Se o tempo não foi iniciado, começa o cronômetro
+      if (!tempoIniciado) {
+        iniciarTempo();
+      }
+
+      // Verifica se o texto digitado está correto
+      if (campoTexto.value === textoOriginal) {
+        clearInterval(intervalId);  // Para o cronômetro
+        resultado.textContent = `Parabéns! Você digitou o texto em ${tempo} segundos.`;
+        campoTexto.disabled = true; // Desabilita o campo após completar
+      }
+    });
+
+    // Reinicia o jogo ao clicar no botão "Reiniciar Jogo"
+    reiniciarButton.addEventListener('click', reiniciarJogo);
+  </script>
+
+</body>
+</html>

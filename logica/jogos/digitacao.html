@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jogo de Digitação</title>
+ 
+  <link rel="stylesheet" href="digitacao.css">
+</head>
+<body>
+
+  <h1>Jogo de Digitação</h1>
+  
+  <p>Digite o texto abaixo o mais rápido possível:</p>
+  <p id="texto">O rápido marrom cachorro pula sobre a preguiçosa raposa.</p>
+  
+  <input type="text" id="campoTexto" placeholder="Digite aqui..." autofocus>
+  
+  <p id="resultado"></p>
+  <p id="tempo">Tempo: <span id="contador">0</span> segundos</p>
+
+  <button id="reiniciar">Reiniciar Jogo</button>
+
+  <script>
+    const textoOriginal = document.getElementById('texto').textContent;
+    const campoTexto = document.getElementById('campoTexto');
+    const resultado = document.getElementById('resultado');
+    const contador = document.getElementById('contador');
+    const reiniciarButton = document.getElementById('reiniciar');
+    
+    let tempoIniciado = false;
+    let tempo = 0;
+    let intervalId;
+
+    // Função que começa a contagem do tempo
+    function iniciarTempo() {
+      tempoIniciado = true;
+      intervalId = setInterval(function() {
+        tempo++;
+        contador.textContent = tempo;
+      }, 1000);
+    }
+
+    // Função para reiniciar o jogo
+    function reiniciarJogo() {
+      tempo = 0;
+      contador.textContent = tempo;
+      campoTexto.value = '';
+      resultado.textContent = '';
+      campoTexto.disabled = false;
+      tempoIniciado = false;
+    }
+
+    // Inicia a contagem do tempo ao começar a digitar
+    campoTexto.addEventListener('input', function() {
+      // Se o tempo não foi iniciado, começa o cronômetro
+      if (!tempoIniciado) {
+        iniciarTempo();
+      }
+      /*Evitar iniciar o cronômetro várias vezes: A ideia aqui é que o cronômetro só deve começar a contar 
+      uma vez,ou seja, quando o usuário começa a digitar pela primeira vez.
+    Caso contrário, o cronômetro começaria toda vez que o usuário digitasse no campo (o que não faria sentido). Com essa verificação (if (!tempoIniciado)),
+    garantimos que o cronômetro só comece uma única vez.*/
+
+      // Verifica se o texto digitado está correto
+      if (campoTexto.value === textoOriginal) {
+        clearInterval(intervalId);  // Para o cronômetro
+        resultado.textContent = `Parabéns! Você digitou o texto em ${tempo} segundos.`;
+        campoTexto.disabled = true; // Desabilita o campo após completar
+      }
+    });
+
+    // Reinicia o jogo ao clicar no botão "Reiniciar Jogo"
+    reiniciarButton.addEventListener('click', reiniciarJogo);
+  </script>
+
+</body>
+</html>
