@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Digite seu nome</h3>
+<input type="text" id="campoNome">
+<p id="dica"></p>
+<p id="digitando"></p>
+
+<script>
+  const campo = document.getElementById('campoNome');
+  const dica = document.getElementById('dica');
+  const digitando = document.getElementById('digitando');
+
+  // Mostra uma dica quando o campo recebe foco
+  campo.addEventListener('focus', function() {
+    dica.textContent = 'Use seu nome completo.';
+  });
+
+  // Atualiza o texto conforme o usuário digita
+  campo.addEventListener('input', function() {
+    digitando.textContent = 'Você está digitando: ' + campo.value;
+  });
+</script>
+
+</body>
+</html>

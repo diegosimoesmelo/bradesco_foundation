@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador Regressivo</title>
+</head>
+<body>
+
+<h1>Contador Regressivo</h1>
+<p>Digite o número de segundos:</p>
+<input type="number" id="tempoInput" placeholder="Segundos">
+<button onclick="iniciarContagem()">Iniciar Contagem</button>
+
+<p id="contador"></p>
+
+<script>
+  let intervalId;
+  
+  function iniciarContagem() {
+    let tempo = parseInt(document.getElementById('tempoInput').value);
+    
+    if (isNaN(tempo) || tempo <= 0) {
+      alert('Digite um número válido!');
+      return;
+    }
+
+    document.getElementById('contador').textContent = tempo + ' segundos restantes';
+    
+    intervalId = setInterval(function() {
+      tempo--;
+      document.getElementById('contador').textContent = tempo + ' segundos restantes';
+      
+      if (tempo <= 0) {
+        clearInterval(intervalId);
+        document.getElementById('contador').textContent = 'Tempo esgotado!';
+      }
+    }, 1000);
+  }
+</script>
+
+</body>
+</html>
