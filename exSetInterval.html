@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Contador Regressivo</h1>
+<p id="contador">10</p>
+
+<script>
+  let tempo = 10;
+  const contador = document.getElementById('contador');
+
+  const intervalo = setInterval(function() {
+    tempo--;
+    contador.textContent = tempo;
+
+    if (tempo <= 0) {
+      clearInterval(intervalo);  // Para a contagem
+      contador.textContent = 'Tempo esgotado!';
+    }
+  }, 1000); // A cada 1 segundo
+</script>
+
+</body>
+</html>

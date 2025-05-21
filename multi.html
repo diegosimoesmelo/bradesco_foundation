@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Lista de Tarefas</h3>
+<input type="text" id="novaTarefa" placeholder="Digite uma tarefa">
+<button id="btnAdicionar">Adicionar</button>
+<ul id="lista"></ul>
+<p id="mensagem"></p>
+
+<script>
+  const btn = document.getElementById('btnAdicionar');
+  const input = document.getElementById('novaTarefa');
+  const lista = document.getElementById('lista');
+  const mensagem = document.getElementById('mensagem');
+
+  // 1. Adiciona a tarefa na lista
+  btn.addEventListener('click', function() {
+    if (input.value.trim() !== '') {
+      const item = document.createElement('li');
+      item.textContent = input.value;
+      lista.appendChild(item);
+    }
+  });
+
+  // 2. Mostra uma mensagem
+  btn.addEventListener('click', function() {
+    mensagem.textContent = 'Tarefa adicionada com sucesso!';
+  });
+
+  // 3. Limpa o campo
+  btn.addEventListener('click', function() {
+    input.value = '';
+    input.focus();
+  });
+</script>
+
+</body>
+</html>

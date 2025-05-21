@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barra de Carregamento</title>
+    <style>
+        #barra {
+            width: 0%;
+            height: 30px;
+            background-color: green;
+        }
+        #container {
+            width: 100%;
+            background-color: #f3f3f3;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carregando...</h1>
+    <div id="container">
+        <div id="barra"></div>
+    </div>
+
+    <script>
+        let largura = 0;
+        const barra = document.getElementById("barra");
+        const intervalo = setInterval(() => {
+            largura += 1;
+            barra.style.width = largura + '%';
+            if (largura >= 100) {
+                clearInterval(intervalo);
+                alert("Carregamento Concluído!");
+            }
+        }, 100);
+    </script>
+</body>
+</html>
