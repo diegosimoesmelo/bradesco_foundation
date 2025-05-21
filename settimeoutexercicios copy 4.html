@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 4 – Quiz com Timer</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .pergunta { margin-bottom: 20px; }
+    .mensagem { font-weight: bold; margin-top: 20px; color: red; }
+    #timer { font-size: 20px; color: darkblue; font-weight: bold; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h2>Exercício 4 – Quiz com Timer</h2>
+  <button id="start-quiz">Começar</button>
+  
+  <div id="quiz" style="display: none;">
+    <p id="timer">Tempo restante: 10s</p>
+    <p class="pergunta">Qual é a capital do Brasil?</p>
+    <button class="resposta">Rio de Janeiro</button>
+    <button class="resposta">Brasília</button>
+  </div>
+
+  <p id="mensagem" class="mensagem"></p>
+
+  <script>
+    const timerEl = document.getElementById("timer");
+    const quizEl = document.getElementById("quiz");
+    const mensagemEl = document.getElementById("mensagem");
+    let tempo = 10;
+    let timerId;
+    let tempoLimite;
+
+    function atualizarTimer() {
+      timerEl.textContent = `Tempo restante: ${tempo}s`;
+      if (tempo > 0) {
+        tempo--;
+        timerId = setTimeout(atualizarTimer, 1000);
+      }
+    }
+
+    document.getElementById("start-quiz").addEventListener("click", () => {
+      tempo = 10;
+      mensagemEl.textContent = "";
+      quizEl.style.display = "block";
+      atualizarTimer();
+
+      tempoLimite = setTimeout(() => {
+        mensagemEl.textContent = "⏰ Tempo esgotado!";
+        quizEl.style.display = "none";
+      }, 10000);
+    });
+
+    document.querySelectorAll(".resposta").forEach(botao => {
+      botao.addEventListener("click", () => {
+        clearTimeout(tempoLimite);
+        clearTimeout(timerId);
+        mensagemEl.textContent = "✅ Resposta registrada!";
+        quizEl.style.display = "none";
+      });
+    });
+  </script>
+</body>
+</html>

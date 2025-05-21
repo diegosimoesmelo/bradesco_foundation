@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 5 – Corrida de Animais</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .mensagens { margin-top: 20px; }
+  </style>
+</head>
+<body>
+  <h2>Exercício 5 – Corrida de Animais</h2>
+  <button id="btn-corrida">Iniciar corrida</button>
+  <div class="mensagens" id="mensagens"></div>
+
+  <script>
+    const mensagens = document.getElementById("mensagens");
+
+    document.getElementById("btn-corrida").addEventListener("click", () => {
+      mensagens.innerHTML = "";
+      setTimeout(() => mensagens.innerHTML += "<p>🐇 Coelho chegou!</p>", 2000);
+      setTimeout(() => mensagens.innerHTML += "<p>🐕 Cachorro chegou!</p>", 3000);
+      setTimeout(() => mensagens.innerHTML += "<p>🐢 Tartaruga chegou!</p>", 6000);
+    });
+  </script>
+</body>
+</html>

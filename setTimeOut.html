@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 1</title>
+</head>
+<body>
+  <h2>Exercício 1: Mensagem com atraso</h2>
+  <button id="btn-msg">Clique aqui</button>
+  <p id="mensagem"></p>
+
+  <script>
+    document.getElementById("btn-msg").addEventListener("click", () => {
+      setTimeout(() => {
+        document.getElementById("mensagem").textContent = "Passaram 3 segundos!";
+      }, 3000);
+    });
+  </script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 2</title>
+</head>
+<body>
+  <h2>Exercício 2: Esconde o texto</h2>
+  <p id="texto">Este texto vai sumir em 5 segundos após clicar no botão.</p>
+  <button id="btn-esconder">Esconder</button>
+
+  <script>
+    document.getElementById("btn-esconder").addEventListener("click", () => {
+      setTimeout(() => {
+        document.getElementById("texto").style.display = "none";
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

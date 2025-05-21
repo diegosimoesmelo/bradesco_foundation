@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 3 – Semáforo</title>
+  <style>
+    .semaforo {
+      width: 60px;
+      height: 180px;
+      background: #333;
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .luz {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #555;
+      margin: auto;
+    }
+
+    .acesa-vermelha {
+      background: red;
+    }
+
+    .acesa-amarela {
+      background: yellow;
+    }
+
+    .acesa-verde {
+      background: green;
+    }
+
+    button {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Exercício 3 – Semáforo</h2>
+  <div class="semaforo">
+    <div id="vermelha" class="luz"></div>
+    <div id="amarela" class="luz"></div>
+    <div id="verde" class="luz"></div>
+  </div>
+  <button id="btn-iniciar">Iniciar</button>
+
+  <script>
+    const luzVermelha = document.getElementById("vermelha");
+    const luzAmarela = document.getElementById("amarela");
+    const luzVerde = document.getElementById("verde");
+
+    function apagarTodas() {
+      luzVermelha.className = "luz";
+      luzAmarela.className = "luz";
+      luzVerde.className = "luz";
+    }
+
+    document.getElementById("btn-iniciar").addEventListener("click", () => {
+      apagarTodas();
+      luzVerde.classList.add("acesa-verde");
+
+      setTimeout(() => {
+        apagarTodas();
+        luzAmarela.classList.add("acesa-amarela");
+      }, 3000);
+
+      setTimeout(() => {
+        apagarTodas();
+        luzVermelha.classList.add("acesa-vermelha");
+      }, 5000);
+    });
+  </script>
+</body>
+</html>

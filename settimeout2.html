@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 4</title>
+  <style>
+    #bloco {
+      width: 50px;
+      height: 50px;
+      background: blue;
+      position: relative;
+      left: 0;
+      transition: left 1s;
+    }
+  </style>
+</head>
+<body>
+  <h2>Exercício 3: Animação</h2>
+  <button id="btn-mover">Mover bloco</button>
+  <div id="bloco"></div>
+
+  <script>
+    document.getElementById("btn-mover").addEventListener("click", () => {
+      setTimeout(() => {
+        document.getElementById("bloco").style.left = "200px";
+      }, 2000);
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercício 5</title>
+</head>
+<body>
+  <h2>Exercício 4: Mensagens com delay</h2>
+  <button id="btn-mensagens">Iniciar</button>
+  <ul id="mensagens"></ul>
+
+  <script>
+    document.getElementById("btn-mensagens").addEventListener("click", () => {
+      const mensagens = [
+        "Mensagem 1: Bem-vindo!",
+        "Mensagem 2: Carregando...",
+        "Mensagem 3: Pronto!"
+      ];
+
+      mensagens.forEach((msg, index) => {
+        setTimeout(() => {
+          const li = document.createElement("li");
+          li.textContent = msg;
+          document.getElementById("mensagens").appendChild(li);
+        }, 2000 * (index + 1));
+      });
+    });
+  </script>
+</body>
+</html>
