@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agenda de Tarefas</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f0f0f0; }
+    .card { background: white; border-radius: 10px; padding: 20px; margin-bottom: 20px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+    ul { list-style: none; padding: 0; }
+    li { padding: 8px; background: #eee; margin-bottom: 5px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; }
+    li.completed { text-decoration: line-through; background: #d4ffd4; }
+    button { margin-left: 10px; }
+    input { padding: 8px; width: 100%; margin-bottom: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Agenda de Tarefas</h1>
+
+  <div class="card">
+    <input type="text" id="novaTarefa" placeholder="Digite sua nova tarefa" />
+    <button onclick="adicionarTarefa()">Adicionar</button>
+    <ul id="listaTarefas"></ul>
+  </div>
+
+  <script>
+    let tarefas = [];
+
+    function adicionarTarefa() {
+      const input = document.getElementById('novaTarefa');
+      const texto = input.value.trim();
+
+      if (texto === '') {
+        alert('Digite uma tarefa.');
+        return;
+      }
+
+      tarefas.push({ texto, concluida: false });
+      input.value = '';
+      atualizarLista();
+    }
+
+    function atualizarLista() {
+      const lista = document.getElementById('listaTarefas');
+      lista.innerHTML = '';
+
+      tarefas.forEach((tarefa, index) => {
+        const li = document.createElement('li');
+        li.textContent = tarefa.texto;
+        li.className = tarefa.concluida ? 'completed' : '';
+
+        const btnConcluir = document.createElement('button');
+        btnConcluir.textContent = tarefa.concluida ? 'Desfazer' : 'Concluir';
+        btnConcluir.onclick = () => {
+          tarefas[index].concluida = !tarefas[index].concluida;
+          atualizarLista();
+        };
+
+        const btnRemover = document.createElement('button');
+        btnRemover.textContent = 'Remover';
+        btnRemover.onclick = () => {
+          tarefas.splice(index, 1);
+          atualizarLista();
+        };
+
+        li.appendChild(btnConcluir);
+        li.appendChild(btnRemover);
+        lista.appendChild(li);
+      });
+    }
+  </script>
+</body>
+</html>

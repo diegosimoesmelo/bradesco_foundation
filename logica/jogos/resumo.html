@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Exercícios de Lógica com JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    .exercicio {
+      display: none;
+      margin-top: 20px;
+    }
+    button {
+      margin: 5px;
+      padding: 10px 15px;
+    }
+    .menu {
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Exercícios de Lógica de Programação</h1>
+
+  <div class="menu">
+    <button id="btnEx1">Par ou Ímpar</button>
+    <button id="btnEx2">Tabuada</button>
+    <button id="btnEx3">Contador</button>
+    <button id="btnEx4">Classificar Idade</button>
+    <button id="btnEx5">Somar até 0</button>
+  </div>
+
+  <!-- Exercício 1 -->
+  <div class="exercicio" id="ex1">
+    <h3>Verifique se o número é par ou ímpar</h3>
+    <input type="number" id="numero">
+    <button id="btnVerificarParImpar">Verificar</button>
+    <p id="resultado"></p>
+  </div>
+
+  <!-- Exercício 2 -->
+  <div class="exercicio" id="ex2">
+    <h3>Tabuada</h3>
+    <input type="number" id="tabuadaInput">
+    <button id="btnTabuada">Gerar</button>
+    <ul id="tabuadaResultado"></ul>
+  </div>
+
+  <!-- Exercício 3 -->
+  <div class="exercicio" id="ex3">
+    <h3>Contador</h3>
+    <input type="number" id="inicio" placeholder="Início">
+    <input type="number" id="fim" placeholder="Fim">
+    <button id="btnContar">Contar</button>
+    <p id="contadorResultado"></p>
+  </div>
+
+  <!-- Exercício 4 -->
+  <div class="exercicio" id="ex4">
+    <h3>Classifique sua idade</h3>
+    <input type="number" id="idadeInput">
+    <button id="btnClassificarIdade">Classificar</button>
+    <p id="classificacao"></p>
+  </div>
+
+  <!-- Exercício 5 -->
+  <div class="exercicio" id="ex5">
+    <h3>Soma até digitar 0</h3>
+    <input type="number" id="somaInput">
+    <button id="btnAdicionar">Adicionar</button>
+    <p id="somaTotal">Total: 0</p>
+  </div>
+
+  <script>
+    // Mostrar exercício
+    function mostrarExercicio(id) {
+      const ex1 = document.getElementById("ex1");
+      const ex2 = document.getElementById("ex2");
+      const ex3 = document.getElementById("ex3");
+      const ex4 = document.getElementById("ex4");
+      const ex5 = document.getElementById("ex5");
+
+      ex1.style.display = "none";
+      ex2.style.display = "none";
+      ex3.style.display = "none";
+      ex4.style.display = "none";
+      ex5.style.display = "none";
+
+      document.getElementById(id).style.display = "block";
+    }
+
+    // Eventos de botões do menu
+    document.getElementById("btnEx1").addEventListener("click", () => mostrarExercicio("ex1"));
+    document.getElementById("btnEx2").addEventListener("click", () => mostrarExercicio("ex2"));
+    document.getElementById("btnEx3").addEventListener("click", () => mostrarExercicio("ex3"));
+    document.getElementById("btnEx4").addEventListener("click", () => mostrarExercicio("ex4"));
+    document.getElementById("btnEx5").addEventListener("click", () => mostrarExercicio("ex5"));
+
+    // Lógica dos exercícios
+    document.getElementById("btnVerificarParImpar").addEventListener("click", () => {
+      const numero = parseInt(document.getElementById("numero").value);
+      const resultado = document.getElementById("resultado");
+      resultado.textContent = (numero % 2 === 0) ? "É par!" : "É ímpar!";
+    });
+
+    document.getElementById("btnTabuada").addEventListener("click", () => {
+      const numero = parseInt(document.getElementById("tabuadaInput").value);
+      const lista = document.getElementById("tabuadaResultado");
+      lista.innerHTML = "";
+      for (let i = 1; i <= 10; i++) {
+        const item = document.createElement("li");
+        item.textContent = `${numero} x ${i} = ${numero * i}`;
+        lista.appendChild(item);
+      }
+    });
+
+    document.getElementById("btnContar").addEventListener("click", () => {
+      let inicio = parseInt(document.getElementById("inicio").value);
+      const fim = parseInt(document.getElementById("fim").value);
+      let texto = "";
+      while (inicio <= fim) {
+        texto += `${inicio} `;
+        inicio++;
+      }
+      document.getElementById("contadorResultado").textContent = texto;
+    });
+
+    document.getElementById("btnClassificarIdade").addEventListener("click", () => {
+      const idade = parseInt(document.getElementById("idadeInput").value);
+      const resultado = document.getElementById("classificacao");
+      if (idade < 12) {
+        resultado.textContent = "Criança";
+      } else if (idade < 18) {
+        resultado.textContent = "Adolescente";
+      } else if (idade < 60) {
+        resultado.textContent = "Adulto";
+      } else {
+        resultado.textContent = "Idoso";
+      }
+    });
+
+    let total = 0;
+    document.getElementById("btnAdicionar").addEventListener("click", () => {
+      const numero = parseInt(document.getElementById("somaInput").value);
+      if (numero === 0) {
+        alert("Encerrando. Total final: " + total);
+        total = 0;
+      } else {
+        total += numero;
+      }
+      document.getElementById("somaTotal").textContent = "Total: " + total;
+      document.getElementById("somaInput").value = "";
+    });
+  </script>
+</body>
+</html>
