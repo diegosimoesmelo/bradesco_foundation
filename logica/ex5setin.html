@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animar Elemento</title>
+    <style>
+        #quadrado {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div id="quadrado"></div>
+
+    <script>
+        let posicao = 0;
+        const quadrado = document.getElementById("quadrado");
+        const intervalo = setInterval(() => {
+            posicao += 10;
+            quadrado.style.left = posicao + 'px';
+            if (posicao >= 500) {
+                clearInterval(intervalo);
+            }
+        }, 100);
+    </script>
+</body>
+</html>

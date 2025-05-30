@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trocar Cor de Fundo</title>
+</head>
+<body>
+    <h1>Fundo colorido alternando...</h1>
+
+    <script>
+        let trocas = 0;
+        const intervalo = setInterval(() => {
+            if (document.body.style.backgroundColor === 'red') {
+                document.body.style.backgroundColor = 'blue';
+            } else {
+                document.body.style.backgroundColor = 'red';
+            }
+            trocas++;
+            if (trocas >= 10) {
+                clearInterval(intervalo);
+            }
+        }, 2000);
+    </script>
+</body>
+</html>
