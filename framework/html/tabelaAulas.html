@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Tabela de Horários</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+  <h2>Horários das Aulas</h2>
+  <table class="table table-bordered table-hover">
+    <caption>Grade de horários semanais do curso</caption>
+    <thead class="table-dark">
+      <tr>
+        <th scope="col">Horário</th>
+        <th scope="col">Segunda</th>
+        <th scope="col">Terça</th>
+        <th scope="col">Quarta</th>
+        <th scope="col">Quinta</th>
+        <th scope="col">Sexta</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">08:00 - 10:00</th>
+        <td rowspan="2">Matemática</td>
+        <td>História</td>
+        <td>Geografia</td>
+        <td rowspan="2">Biologia</td>
+        <td>Física</td>
+      </tr>
+      <tr>
+        <th scope="row">10:00 - 12:00</th>
+        <td>Inglês</td>
+        <td>Química</td>
+        <td>Filosofia</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="6" class="text-center">Horários sujeitos a alterações</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
+</body>
+</html>
