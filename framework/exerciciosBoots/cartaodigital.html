@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartão de Apresentação</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-lg">
+                    <div class="card-header bg-primary text-white text-center">
+                        <h4 class="mb-0">Meu Cartão Digital</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <!-- Foto de perfil -->
+                        <img src="/placeholder.svg?height=150&width=150" 
+                             alt="Foto de perfil" 
+                             class="rounded-circle mb-3 border border-3 border-primary"
+                             style="width: 150px; height: 150px; object-fit: cover;">
+                        
+                        <!-- Informações pessoais -->
+                        <h3 class="card-title text-primary">João Silva</h3>
+                        <p class="card-text text-muted">
+                            <i class="fas fa-briefcase me-2"></i>
+                            Desenvolvedor Web Júnior
+                        </p>
+                        <p class="card-text">
+                            <i class="fas fa-map-marker-alt me-2 text-danger"></i>
+                            São Paulo, SP
+                        </p>
+                        
+                        <!-- Descrição -->
+                        <p class="card-text">
+                            Estudante apaixonado por tecnologia, sempre em busca de novos desafios e aprendizados.
+                        </p>
+                        
+                        <!-- Habilidades -->
+                        <div class="mb-3">
+                            <span class="badge bg-secondary me-1">HTML</span>
+                            <span class="badge bg-secondary me-1">CSS</span>
+                            <span class="badge bg-secondary me-1">Bootstrap</span>
+                            <span class="badge bg-secondary me-1">JavaScript</span>
+                        </div>
+                        
+                        <!-- Botões de contato -->
+                        <div class="d-grid gap-2">
+                            <a href="mailto:joao@email.com" class="btn btn-primary">
+                                <i class="fas fa-envelope me-2"></i>
+                                Enviar Email
+                            </a>
+                            <div class="row">
+                                <div class="col-6">
+                                    <a href="https://linkedin.com" class="btn btn-outline-primary w-100">
+                                        <i class="fab fa-linkedin me-1"></i>
+                                        LinkedIn
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a href="https://github.com" class="btn btn-outline-dark w-100">
+                                        <i class="fab fa-github me-1"></i>
+                                        GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted text-center">
+                        <small>
+                            <i class="fas fa-phone me-2"></i>
+                            (11) 99999-9999
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+<!-- 
+
+## **Progressão Sugerida dos Exercícios:**
+
+1. **Iniciante**: Cartão de Apresentação → Sistema de Login
+2. **Intermediário**: Cardápio → Blog de Notícias → Página de Evento
+3. **Avançado**: Portfólio → Dashboard → Landing Page → E-commerce
+
+
+## 1. **Cartão de Apresentação Pessoal**
+
+**Contexto**: Criar um cartão digital para se apresentar profissionalmente
+**Conceitos**: Estrutura HTML básica, classes Bootstrap, cards, botões
+**Objetivo**: O aluno cria um cartão com foto, nome, profissão e redes sociais
+
+## 2. **Cardápio de Restaurante**
+
+**Contexto**: Desenvolver um cardápio online para um restaurante local
+**Conceitos**: Listas, grid system, badges, cores contextuais
+**Objetivo**: Organizar pratos por categoria com preços e descrições
+
+## 3. **Página de Evento/Festa**
+
+**Contexto**: Criar uma landing page para divulgar um evento
+**Conceitos**: Jumbotron/hero section, formulários, responsividade
+**Objetivo**: Informações do evento, formulário de inscrição e galeria de fotos
+
+## 4. **Portfólio de Fotógrafo**
+
+**Contexto**: Showcase de trabalhos de um fotógrafo
+**Conceitos**: Navbar, carousel, modal, grid de imagens
+**Objetivo**: Galeria interativa com navegação e visualização ampliada
+
+## 5. **Dashboard de Estudante**
+
+**Contexto**: Painel para acompanhar notas e atividades escolares
+**Conceitos**: Tabelas, progress bars, alerts, cards informativos
+**Objetivo**: Visualizar desempenho acadêmico de forma organizada
+
+## **6. Blog/Site de Notícias** 📰
+
+**Conceitos**: Breadcrumbs, pagination, media objects, offcanvas
+**Contexto**: Portal de notícias da escola/faculdade
+
+- Layout de artigos com sidebar
+- Sistema de comentários
+- Categorias e tags
+- Paginação de posts
+
+
+## **7. E-commerce/Loja Virtual** 🛒
+
+**Conceitos**: Product cards, shopping cart, checkout forms, tooltips
+**Contexto**: Loja de produtos universitários (livros, materiais)
+
+- Catálogo de produtos
+- Carrinho de compras
+- Filtros e busca
+- Processo de checkout
+
+
+## **8. Sistema de Login/Cadastro** 🔐
+
+**Conceitos**: Forms validation, input groups, floating labels, toasts
+**Contexto**: Portal de acesso ao sistema acadêmico
+
+- Tela de login responsiva
+- Formulário de cadastro
+- Recuperação de senha
+- Validação em tempo real
+
+
+## **9. Dashboard Administrativo** ⚙️
+
+**Conceitos**: Sidebar collapse, datatables, modals, dropdowns
+**Contexto**: Painel do coordenador de curso
+
+- Menu lateral retrátil
+- Tabelas com ordenação
+- Modais de confirmação
+- Gráficos simples
+
+
+## **10. Landing Page de Produto** 🚀
+
+**Conceitos**: Parallax effects, scroll spy, smooth scrolling, pricing tables
+**Contexto**: Divulgação de novo curso online
+
+- Hero section impactante
+- Seções de features
+- Depoimentos
+- Tabela de preços-->
