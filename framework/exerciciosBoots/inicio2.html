@@ -1,40 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Exemplo</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="container mt-5">
-        <div class="row">
-          <div class="col">
-            <div class="p-3 bg-primary text-white">Coluna 1</div>
-          </div>
-          <div class="col">
-            <div class="p-3 bg-success text-white">Coluna 2</div>
-          </div>
+
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#meuModal">
+    Mais Informações
+  </button>
+
+  <div class="modal fade" id="meuModal" tabindex="-1" role="dialog" aria-labelledby="meuModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="meuModalLabel">Sobre o Projeto</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Este projeto foi desenvolvido para demonstrar o uso de modais no Bootstrap. 
+          Ele permite que você abra janelas pop-up com conteúdo adicional de forma simples e eficiente.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
         </div>
       </div>
-      https://getbootstrap.com/docs/5.3/utilities/spacing/
-      https://getbootstrap.com/docs/5.3/layout/grid/
+    </div>
+  </div>
 
-      <!-- alerta de aviso -->
-      <div class="alert alert-success" role="alert">
-        Cadastro realizado com sucesso!
-      </div>
-
-      https://getbootstrap.com/docs/5.3/components/alerts/
-      <div class="card" style="width: 18rem;">
-        <img src="https://via.placeholder.com/286x180" class="card-img-top" alt="Imagem de exemplo">
-        <div class="card-body">
-          <h5 class="card-title">Título do Card</h5>
-          <p class="card-text">Este é um exemplo de card com imagem e texto.</p>
-          <a href="#" class="btn btn-primary">Saiba Mais</a>
-        </div>
-      </div>
-      https://getbootstrap.com/docs/5.3/components/card/
-      
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+

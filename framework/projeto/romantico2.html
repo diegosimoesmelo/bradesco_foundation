@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nosso Amor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      color: #5a2a49;
+    }
+    .hero {
+      background: url('https://images.unsplash.com/photo-1521335629791-ce4aec67dd47?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+    .hero h1 {
+      z-index: 1;
+      font-size: 4rem;
+      font-weight: bold;
+    }
+    .photo-grid {
+      padding: 50px 0;
+    }
+    .photo-grid img {
+      border-radius: 15px;
+      transition: transform 0.3s;
+    }
+    .photo-grid img:hover {
+      transform: scale(1.05);
+    }
+    footer {
+      background-color: #f8e1ea;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <h1>Nosso Amor 💕</h1>
+      <p class="lead">Uma jornada cheia de momentos especiais</p>
+    </div>
+  </section>
+
+  <!-- Galeria de Fotos -->
+  <section class="photo-grid container">
+    <div class="text-center mb-5">
+      <h2>Memórias Queridas</h2>
+      <p>Algumas fotos dos nossos momentos mais felizes juntos</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-4">
+        <img src="1000104244.jpg" class="img-fluid" alt="Foto 1">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="1000104245.jpg" class="img-fluid" alt="Foto 2">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="1000104246.jpg" class="img-fluid" alt="Foto 3">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="1000104247.jpg" class="img-fluid" alt="Foto 4">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="1000104248.jpg" class="img-fluid" alt="Foto 5">
+      </div>
+      <div class="col-sm-6 col-md-4">
+        <img src="https://placekitten.com/403/300" class="img-fluid" alt="Foto 6">
+      </div>
+    </div>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Nosso Amor. Feito com 💖 por [Seu Nome]</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
