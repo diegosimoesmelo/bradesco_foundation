@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nossa História de Amor</title>
-    
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
@@ -33,19 +32,48 @@
         }
         
         .hero-section {
-            background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://source.unsplash.com/1600x900/?couple,romantic') no-repeat center center;
-            background-size: cover;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            text-align: center;
-            color: white;
-            position: relative;
-        }
-        
-        .hero-content {
-            z-index: 1;
-        }
+    height: 100vh;
+    position: relative;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.btn-romantic {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-romantic:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(232, 74, 95, 0.3);
+    color: white;
+}
         
         .heart-divider {
             position: relative;
@@ -269,16 +297,100 @@
                 left: auto !important;
             }
         }
+
+.modal-romantic .modal-content {
+    border-radius: 15px;
+    border: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-romantic .modal-header {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    color: white;
+    border-radius: 15px 15px 0 0;
+    border-bottom: none;
+}
+
+.modal-romantic .modal-body {
+    padding: 30px;
+    background-color: #fff;
+}
+
+.love-letter {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--text-color);
+    text-align: justify;
+}
+
+.signature {
+    text-align: right;
+    margin-top: 30px;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.modal-romantic .btn-close {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    opacity: 1;
+}
     </style>
 </head>
 <body>
     <!-- Hero Section -->
-    <section class="hero-section" id="home">
-        <div class="container hero-content">
-            <h1 class="display-3 mb-4 fancy-title">Maria & Diego</h1>
-            <p class="lead mb-5">Nossa história de amor em fotos e mensagens</p>
+<section id="home">
+    <div id="heroCarousel" class="carousel slide hero-section" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
         </div>
-    </section>
+        
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/1000104244.jpg');"></div>
+                <div class="container hero-content">
+                    <h1 class="display-3 mb-4 fancy-title">Maria & João</h1>
+                    <p class="lead mb-5">Nossa história de amor em fotos e mensagens</p>
+                    <button class="btn btn-romantic btn-lg me-3" data-bs-toggle="modal" data-bs-target="#loveLetterModal">
+                        <i class="fas fa-heart me-2"></i>Carta de Amor
+                    </button>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/1000104245.jpg');"></div>
+                <div class="container hero-content">
+                    <h1 class="display-3 mb-4 fancy-title">Dois Corações</h1>
+                    <p class="lead mb-5">Unidos para sempre em uma só alma</p>
+                    <button class="btn btn-romantic btn-lg me-3" data-bs-toggle="modal" data-bs-target="#loveLetterModal">
+                        <i class="fas fa-heart me-2"></i>Carta de Amor
+                    </button>
+                </div>
+            </div>
+            
+            <div class="carousel-item">
+                <div class="hero-bg" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/1000104246.jpg');"></div>
+                <div class="container hero-content">
+                    <h1 class="display-3 mb-4 fancy-title">Amor Eterno</h1>
+                    <p class="lead mb-5">Cada momento juntos é um presente do destino</p>
+                    <button class="btn btn-romantic btn-lg me-3" data-bs-toggle="modal" data-bs-target="#loveLetterModal">
+                        <i class="fas fa-heart me-2"></i>Carta de Amor
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+</section>
 
     <!-- Photo Gallery Section -->
     <section class="py-5" id="fotos">
@@ -291,7 +403,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="photo-card">
-                        <img src="1000104244.jpg" alt="Casal">
+                        <img src="https://source.unsplash.com/600x900/?couple,love" alt="Casal">
                         <div class="photo-caption">
                             <h5>Nosso primeiro encontro</h5>
                             <p>Aquele dia no parque que mudou nossas vidas</p>
@@ -300,7 +412,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="photo-card">
-                        <img src="1000104245.jpg" alt="Casal na praia">
+                        <img src="https://source.unsplash.com/600x900/?couple,beach" alt="Casal na praia">
                         <div class="photo-caption">
                             <h5>Férias de verão</h5>
                             <p>Dias inesquecíveis à beira-mar</p>
@@ -309,7 +421,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="photo-card">
-                        <img src="1000104246.jpg" alt="Casal no pôr do sol">
+                        <img src="https://source.unsplash.com/600x900/?couple,sunset" alt="Casal no pôr do sol">
                         <div class="photo-caption">
                             <h5>Pôr do sol mágico</h5>
                             <p>Quando prometemos ficar juntos para sempre</p>
@@ -321,7 +433,7 @@
             <div class="row mt-4">
                 <div class="col-md-4">
                     <div class="photo-card">
-                        <img src="1000104247.jpg" alt="Jantar romântico">
+                        <img src="https://source.unsplash.com/600x900/?couple,dinner" alt="Jantar romântico">
                         <div class="photo-caption">
                             <h5>Jantar especial</h5>
                             <p>Celebrando mais um ano juntos</p>
@@ -330,7 +442,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="photo-card">
-                        <img src="1000104248.jpg" alt="Casal nas montanhas">
+                        <img src="https://source.unsplash.com/600x900/?couple,mountains" alt="Casal nas montanhas">
                         <div class="photo-caption">
                             <h5>Aventura nas montanhas</h5>
                             <p>Superando desafios lado a lado</p>
@@ -473,42 +585,42 @@
             <div class="memories-container">
                 <div class="memory">
                     <div class="polaroid">
-                        <img src="1000104244.jpg" alt="Café da manhã">
+                        <img src="https://source.unsplash.com/400x300/?couple,coffee" alt="Café da manhã">
                         <p>Café da manhã surpresa</p>
                     </div>
                 </div>
                 
                 <div class="memory">
                     <div class="polaroid">
-                        <img src="1000104245.jpg" alt="Cinema">
+                        <img src="https://source.unsplash.com/400x300/?couple,movie" alt="Cinema">
                         <p>Noite de cinema em casa</p>
                     </div>
                 </div>
                 
                 <div class="memory">
                     <div class="polaroid">
-                        <img src="1000104246.jpg" alt="Piquenique">
+                        <img src="https://source.unsplash.com/400x300/?couple,picnic" alt="Piquenique">
                         <p>Piquenique no parque</p>
                     </div>
                 </div>
                 
                 <div class="memory">
                     <div class="polaroid">
-                        <img src="1000104247.jpg" alt="Cozinhando juntos">
+                        <img src="https://source.unsplash.com/400x300/?couple,cooking" alt="Cozinhando juntos">
                         <p>Aprendendo a cozinhar juntos</p>
                     </div>
                 </div>
                 
                 <div class="memory">
                     <div class="polaroid">
-                        <img src="1000104248.jpg" alt="Dançando">
+                        <img src="https://source.unsplash.com/400x300/?couple,dance" alt="Dançando">
                         <p>Nossa primeira dança</p>
                     </div>
                 </div>
                 
                 <div class="memory">
                     <div class="polaroid">
-                        <img src="1000104244.jpg" alt="Aniversário">
+                        <img src="https://source.unsplash.com/400x300/?couple,birthday" alt="Aniversário">
                         <p>Festa surpresa de aniversário</p>
                     </div>
                 </div>
@@ -519,11 +631,44 @@
     <!-- Footer -->
     <footer class="py-4 text-center">
         <div class="container">
-            <p class="mb-0">Com amor, Maria & Diego | 2025</p>
+            <p class="mb-0">Com amor, Maria & João | 2025</p>
         </div>
     </footer>
 
     <!-- Bootstrap JS Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Love Letter Modal -->
+<div class="modal fade modal-romantic" id="loveLetterModal" tabindex="-1" aria-labelledby="loveLetterModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title fancy-title fs-2" id="loveLetterModalLabel">
+                    <i class="fas fa-heart me-2"></i>Carta de Amor
+                </h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="love-letter">
+                    <p>Meu amor,</p>
+                    
+                    <p>Escrevo esta carta com o coração transbordando de gratidão e amor por você. Cada dia ao seu lado é uma nova descoberta, uma nova razão para sorrir e acreditar que o amor verdadeiro existe.</p>
+                    
+                    <p>Lembro-me do nosso primeiro encontro como se fosse ontem. Seus olhos brilhavam de uma forma especial, e eu soube naquele momento que minha vida nunca mais seria a mesma. Você trouxe cores para os meus dias cinzentos e música para o meu silêncio.</p>
+                    
+                    <p>Obrigado(a) por ser meu porto seguro nas tempestades, minha alegria nos momentos felizes e minha força quando preciso de coragem. Você não é apenas meu amor, é minha melhor amiga, minha companheira de aventuras e minha alma gêmea.</p>
+                    
+                    <p>Prometo amar você em todos os seus momentos - nos risos e nas lágrimas, nos sonhos e nos medos, na juventude e na velhice. Nosso amor é eterno, e eu escolho você todos os dias, para sempre.</p>
+                    
+                    <p>Com todo o meu amor e devoção,</p>
+                    
+                    <div class="signature">
+                        Para sempre seu(sua) ❤
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
