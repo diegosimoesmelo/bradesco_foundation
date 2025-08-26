@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TarefaController;
+use App\Http\Controllers\ExercicioController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +17,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [TarefaController::class, 'index'])->name('tarefas.index');
-Route::get('/produtos', [TarefaController::class, 'produtos'])->name('produtos.index');
-Route::get('/contatos', [TarefaController::class, 'contatos'])->name('contatos.index');
+Route::get('/exercicio1', [ExercicioController::class, 'exercicio1']);

@@ -6,6 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-    asfpasfpasp
+  <ul>
+    @foreach ($itens as $item)
+        <li>{{ $item }}</li>
+    @endforeach
+</ul>
 </body>
 </html>
