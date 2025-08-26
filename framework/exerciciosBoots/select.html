@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Campo Select com Select2</title>
+  <!-- Estilo do Select2 -->
+  <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    label {
+      font-weight: bold;
+    }
+    .select-container {
+      width: 400px;
+    }
+  </style>
+</head>
+<body>
+
+  <label for="select-multiple">Selecione até 30 opções:</label>
+  <div class="select-container">
+    <select id="select-multiple" multiple="multiple" style="width: 100%;">
+      <!-- Gerando 30 opções -->
+      <option value="1">Opção 1</option>
+      <option value="2">Opção 2</option>
+      <option value="3">Opção 3</option>
+      <option value="4">Opção 4</option>
+      <option value="5">Opção 5</option>
+      <option value="6">Opção 6</option>
+      <option value="7">Opção 7</option>
+      <option value="8">Opção 8</option>
+      <option value="9">Opção 9</option>
+      <option value="10">Opção 10</option>
+      <option value="11">Opção 11</option>
+      <option value="12">Opção 12</option>
+      <option value="13">Opção 13</option>
+      <option value="14">Opção 14</option>
+      <option value="15">Opção 15</option>
+      <option value="16">Opção 16</option>
+      <option value="17">Opção 17</option>
+      <option value="18">Opção 18</option>
+      <option value="19">Opção 19</option>
+      <option value="20">Opção 20</option>
+      <option value="21">Opção 21</option>
+      <option value="22">Opção 22</option>
+      <option value="23">Opção 23</option>
+      <option value="24">Opção 24</option>
+      <option value="25">Opção 25</option>
+      <option value="26">Opção 26</option>
+      <option value="27">Opção 27</option>
+      <option value="28">Opção 28</option>
+      <option value="29">Opção 29</option>
+      <option value="30">Opção 30</option>
+    </select>
+  </div>
+
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Script do Select2 -->
+  <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      $('#select-multiple').select2({
+        placeholder: "Selecione as opções",
+        maximumSelectionLength: 30,
+        language: {
+          noResults: () => "Nenhum resultado encontrado",
+          maximumSelected: () => "Você pode selecionar até 30 opções"
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
