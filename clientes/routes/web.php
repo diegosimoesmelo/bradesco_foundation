@@ -4,6 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\UsuarioSimplesController;
+use App\Http\Controllers\ProdutoController;
+
+Route::get('/produtos/novo', [ProdutoController::class, 'create'])->name('produtos.create');
+Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
 
 
 Route::get('/', function () {
