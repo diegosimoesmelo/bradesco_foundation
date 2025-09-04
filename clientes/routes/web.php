@@ -5,6 +5,13 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\UsuarioSimplesController;
 use App\Http\Controllers\ProdutoController;
+use App\Http\Controllers\CidadeController;
+
+Route::get('/cidades/nova', [CidadeController::class, 'create'])->name('cidades.create');
+Route::post('/cidades', [CidadeController::class, 'store'])->name('cidades.store');
+
+
+
 
 Route::get('/produtos/novo', [ProdutoController::class, 'create'])->name('produtos.create');
 Route::post('/produtos', [ProdutoController::class, 'store'])->name('produtos.store');
