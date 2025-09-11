@@ -1,41 +1,54 @@
-<!-- <!DOCTYPE html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@yield('title', 'Sistema de Clientes')</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    @stack('css')
+    <title>@yield('title', 'Login e Cadastro')</title>
+
+
+    <!-- CDN do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJjRZtWtrddS4INk4F6cxkNj4Z5pRwnh0U5yJee0VJdM+GnbP8JQyybmjX5Z" crossorigin="anonymous">
+    <style>
+        /* Cores personalizadas em tons de vermelho */
+        body {
+            background-color: #f8d7da;
+        }
+
+
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 10px;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .btn-custom {
+            background-color: #dc3545;
+            color: white;
+        }
+
+
+        .btn-custom:hover {
+            background-color: #c82333;
+        }
+
+
+        .alert-custom {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+    </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div class="container">
-            <a class="navbar-brand" href="{{ route('clientes.index') }}">
-                <i class="fas fa-users"></i> Sistema de Clientes
-            </a>
-        </div>
-    </nav>
-
-    <div class="container mt-4">
-        @if(session('success'))
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="fas fa-check-circle"></i> {{ session('success') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-
-        @if(session('error'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <i class="fas fa-exclamation-circle"></i> {{ session('error') }}
-                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
-            </div>
-        @endif
-
+    <div class="container">
         @yield('content')
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    @stack('scripts')
+
+    <!-- CDN do Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-wfS3aWROuP0df5rM1yduYzQhkb3zoTSwaQ1X5u59n1k6V3gXzgyfPVoPjUBeYH8U" crossorigin="anonymous"></script>
 </body>
-</html> -->
+</html>
