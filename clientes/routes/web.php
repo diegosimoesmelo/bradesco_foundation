@@ -7,6 +7,18 @@ use App\Http\Controllers\UsuarioSimplesController;
 use App\Http\Controllers\ProdutoController;
 use App\Http\Controllers\CidadeController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\CadastroController;
+use App\Http\Controllers\AuthController;
+
+
+Route::post('/cadastro', [CadastroController::class, 'store']);
+Route::get('/cadastro', [CadastroController::class, 'index']);
+
+Route::get('/admin/clientes', [CadastroController::class, 'listarClientes'])->name('admin.clientes');
+// login admin
+Route::get('/admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login.form');
+Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login');
+Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
 
 Route::get('/', function () {
