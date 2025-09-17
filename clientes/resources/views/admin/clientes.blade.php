@@ -24,15 +24,26 @@
     @if(session('success')) 
         <div class="alert alert-success">{{ session('success') }}</div> 
     @endif
+    
+    @if(session('error')) 
+        <div class="alert alert-danger">{{ session('error') }}</div> 
+    @endif
 
     <form class="mb-3" method="GET" action="{{ route('admin.clientes') }}">
         <div class="input-group">
             <input type="text" class="form-control" name="q" placeholder="Buscar por nome ou e-mail" value="{{ $q ?? '' }}">
-            <button class="btn btn-secondary">Buscar</button>
+            <button class="btn btn-secondary" type="submit">Buscar</button>
+            @if($q)
+                <a href="{{ route('admin.clientes') }}" class="btn btn-outline-secondary">Limpar</a>
+            @endif
         </div>
     </form>
 
     @if(!empty($clientes) && count($clientes) > 0)
+        <div class="alert alert-info mb-3">
+            <strong>Total:</strong> {{ count($clientes) }} cliente(s) {{ $q ? 'encontrado(s)' : 'cadastrado(s)' }}
+        </div>
+        
         <div class="table-responsive">
             <table class="table table-striped table-bordered align-middle">
                 <thead class="table-dark">
@@ -50,23 +61,61 @@
                 <tbody>
                     @foreach($clientes as $c)
                     <tr>
-                        <td>{{ $c->id }}</td>
-                        <td>{{ $c->nome }}</td>
-                        <td>{{ $c->email }}</td>
-                        <td>{{ $c->telefone }}</td>
-                        <td>{{ $c->idade }}</td>
-                        <td>{{ $c->estilos }}</td>
-                        <td>{{ $c->newsletter ? 'Sim' : 'Não' }}</td>
-                        <td>{{ $c->created_at }}</td>
+                        <td><span class="badge bg-primary">#{{ $c->id }}</span></td>
+                        <td><strong>{{ $c->nome }}</strong></td>
+                        <td>
+                            <a href="mailto:{{ $c->email }}" class="text-decoration-none">
+                                {{ $c->email }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="tel:{{ $c->telefone }}" class="text-decoration-none">
+                                {{ $c->telefone }}
+                            </a>
+                        </td>
+                        <td>{{ $c->idade }} anos</td>
+                        <td>
+                            @if($c->estilos)
+                                @php
+                                    $estilosArray = explode(',', $c->estilos);
+                                @endphp
+                                @foreach($estilosArray as $estilo)
+                                    <span class="badge bg-secondary me-1">{{ trim($estilo) }}</span>
+                                @endforeach
+                            @else
+                                <em class="text-muted">Não informado</em>
+                            @endif
+                        </td>
+                        <td>
+                            @if($c->newsletter)
+                                <span class="badge bg-success">✓ Sim</span>
+                            @else
+                                <span class="badge bg-secondary">✗ Não</span>
+                            @endif
+                        </td>
+                        <td>
+                            <small class="text-muted">
+                                {{ date('d/m/Y H:i', strtotime($c->created_at)) }}
+                            </small>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     @else
-        <div class="alert alert-info">Nenhum cliente cadastrado ainda.</div>
+        <div class="alert alert-info text-center py-5">
+            <i class="fa-solid fa-users fa-3x mb-3 text-muted"></i>
+            <h4>{{ $q ? 'Nenhum cliente encontrado' : 'Nenhum cliente cadastrado ainda' }}</h4>
+            <p class="text-muted mb-0">
+                {{ $q ? 'Tente buscar com outros termos.' : 'Os clientes aparecerão aqui quando se cadastrarem no sistema.' }}
+            </p>
+            @if($q)
+                <a href="{{ route('admin.clientes') }}" class="btn btn-outline-primary mt-2">
+                    Ver todos os clientes
+                </a>
+            @endif
+        </div>
     @endif
 </div>
 @endsection
-
-

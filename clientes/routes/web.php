@@ -17,10 +17,27 @@ Route::post('/cadastro', [CadastroController::class, 'store']);
 
 Route::get('/admin/clientes', [CadastroController::class, 'listarClientes'])->name('admin.clientes');
 // login admin
+// Rotas de autenticação
 Route::get('/admin/login', [AuthController::class, 'showLoginForm'])->name('admin.login.form');
 Route::post('/admin/login', [AuthController::class, 'login'])->name('admin.login');
 Route::post('/admin/logout', [AuthController::class, 'logout'])->name('admin.logout');
 
+
+// Rotas de cadastro (para criar primeira conta)
+Route::get('/admin/register', [AuthController::class, 'showRegisterForm'])->name('admin.register.form');
+Route::post('/admin/register', [AuthController::class, 'register'])->name('admin.register');
+
+
+Route::middleware(['web'])->group(function () {
+    
+    // Gestão de clientes
+    Route::get('/admin/clientes', [CadastroController::class, 'listarClientes'])->name('admin.clientes');
+    
+    // Criar novos usuários admin (apenas superadmins)
+    Route::get('/admin/users/create', [AuthController::class, 'showCreateUserForm'])->name('admin.users.create');
+    Route::post('/admin/users', [AuthController::class, 'storeUser'])->name('admin.users.store');
+    
+});
 
 Route::get('/', function () {
     return redirect('/itens');

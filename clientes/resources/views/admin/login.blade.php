@@ -30,7 +30,13 @@
                     <small class="text-danger">{{ $message }}</small> 
                 @enderror
             </div>
-            <button class="btn btn-primary w-100">Entrar</button>
+            <button class="btn btn-primary w-100 mb-3">Entrar</button>
+            
+            <div class="text-center">
+                <a href="{{ route('admin.register.form') }}" class="btn btn-outline-success">
+                    Criar nova conta
+                </a>
+            </div>
         </form>
     </div>
 </div>
