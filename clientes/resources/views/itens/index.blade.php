@@ -2,13 +2,13 @@
 
 
 @section('content')
-<div class="d-flex justify-content-between align-items-center mb-4">
+<div class="d-flex justify-content-between align-items-center mb-4 container my-5">
     <h1>Lista de Itens</h1>
     <a href="{{ route('itens.create') }}" class="btn btn-primary">Novo Item</a>
 </div>
 
 
-<div class="table-responsive">
+<div class="table-responsive container my-5">
     <table class="table table-striped">
         <thead>
             <tr>

@@ -12,6 +12,12 @@ class CadastroController extends Controller
     {
         return view('festa');
     }
+
+
+
+
+
+    
     public function listarClientes()
     {
         // Buscar todos os registros da tabela cadastros

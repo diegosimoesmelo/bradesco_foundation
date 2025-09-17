@@ -11,8 +11,9 @@ use App\Http\Controllers\CadastroController;
 use App\Http\Controllers\AuthController;
 
 
-Route::post('/cadastro', [CadastroController::class, 'store']);
 Route::get('/cadastro', [CadastroController::class, 'index']);
+
+Route::post('/cadastro', [CadastroController::class, 'store']);
 
 Route::get('/admin/clientes', [CadastroController::class, 'listarClientes'])->name('admin.clientes');
 // login admin
