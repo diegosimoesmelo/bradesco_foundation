@@ -32,6 +32,12 @@ Route::middleware(['web'])->group(function () {
     
     // Gestão de clientes
     Route::get('/admin/clientes', [CadastroController::class, 'listarClientes'])->name('admin.clientes');
+    Route::get('/admin/cliente/{id}', [CadastroController::class, 'show'])->name('admin.cliente.show');
+    Route::get('/admin/cliente/{id}/edit', [CadastroController::class, 'edit'])->name('admin.cliente.edit');
+    Route::put('/admin/cliente/{id}', [CadastroController::class, 'update'])->name('admin.cliente.update');
+    Route::delete('/admin/cliente/{id}', [CadastroController::class, 'destroy'])->name('admin.cliente.destroy');
+    // Gestão de clientes
+    Route::get('/admin/clientes', [CadastroController::class, 'listarClientes'])->name('admin.clientes');
     
     // Criar novos usuários admin (apenas superadmins)
     Route::get('/admin/users/create', [AuthController::class, 'showCreateUserForm'])->name('admin.users.create');

@@ -55,7 +55,7 @@
                         <th>Idade</th>
                         <th>Estilos</th>
                         <th>Newsletter</th>
-                        <th>Cadastrado em</th>
+                        <th>Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -97,6 +97,52 @@
                             <small class="text-muted">
                                 {{ date('d/m/Y H:i', strtotime($c->created_at)) }}
                             </small>
+                        </td>
+                        <td>
+                            <div class="btn-group" role="group">
+                                <a href="{{ route('admin.cliente.show', $c->id) }}" 
+                                   class="btn btn-info btn-sm" 
+                                   title="Ver detalhes">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="{{ route('admin.cliente.edit', $c->id) }}" 
+                                   class="btn btn-warning btn-sm" 
+                                   title="Editar">
+                                    <i class="fa-solid fa-edit"></i>
+                                </a>
+                                <button type="button" 
+                                        class="btn btn-danger btn-sm" 
+                                        title="Excluir"
+                                        data-bs-toggle="modal" 
+                                        data-bs-target="#deleteModal{{ $c->id }}">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+
+                            <!-- Modal de confirmação de exclusão -->
+                            <div class="modal fade" id="deleteModal{{ $c->id }}" tabindex="-1">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Confirmar Exclusão</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>Tem certeza que deseja excluir o cliente:</p>
+                                            <strong>{{ $c->nome }} ({{ $c->email }})</strong>
+                                            <p class="text-muted mt-2">Esta ação não pode ser desfeita!</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                            <form method="POST" action="{{ route('admin.cliente.destroy', $c->id) }}" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger">Confirmar Exclusão</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </td>
                     </tr>
                     @endforeach
