@@ -55,6 +55,7 @@
                         <th>Idade</th>
                         <th>Estilos</th>
                         <th>Newsletter</th>
+                        <th>Data de Criação</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
